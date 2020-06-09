@@ -1,0 +1,70 @@
+{
+  "folders": [
+    {
+      "path": "./"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.git": true,
+      "**/.DS_Store": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/build": true,
+      "**/dist": true
+    },
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/*/**": true
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+      "editor.formatOnSave": true
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+      "editor.formatOnSave": true
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+      "editor.formatOnSave": true
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+      "editor.formatOnSave": true
+    },
+    "eslint.validate.autoFix": true,
+    "prettier.eslintIntegration": true,
+    "typescript.format.enable": false,
+    "typescript.validate.enable": false,
+    "importSorter.generalConfiguration.sortOnBeforeSave": true,
+    "importSorter.importStringConfiguration.spacingPerImportExpression.afterStartingBracket": 1,
+    "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 80,
+    "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.type": "newLineEachExpressionAfterCountLimitExceptIfOnlyOne",
+
+    "importSorter.importStringConfiguration.tabSize": 2,
+    "importSorter.importStringConfiguration.trailingComma": "multiLine",
+    "importSorter.sortConfiguration.customOrderingRules.rules": [
+      {
+        "regex": "^[.]",
+        "orderLevel": 10
+      },
+      {
+        "regex": "^[@]",
+        "orderLevel": 20
+      },
+      {
+        "type": "importMember",
+        "regex": "^$",
+        "orderLevel": 30,
+        "disableSort": true
+      }
+    ],
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.fixAll.eslint": true
+    }
+  }
+}

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FabTabBar Should render 1`] = `
+<Navigator
+  tabBar={[Function]}
+  tabBarOptions={
+    Object {
+      "activeTintColor": "purple",
+    }
+  }
+>
+  <Screen
+    component={[Function]}
+    name="Home"
+    options={
+      Object {
+        "tabBarIcon": [Function],
+      }
+    }
+  />
+  <Screen
+    component={[Function]}
+    name="Home"
+    options={
+      Object {
+        "tabBarIcon": [Function],
+      }
+    }
+  />
+</Navigator>
+`;

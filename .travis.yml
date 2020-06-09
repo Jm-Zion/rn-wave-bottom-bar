@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - node
+before_install:
+  - yarn install
+cache: yarn
+jobs:
+  include:
+    - stage: test
+      script: yarn test
+    - stage: dry-release
+      script: yarn semantic-release --dry-run
+    - stage: release
+      script: yarn semantic-release
+
+stages:
+  - test
+  - name: dry-release
+    if: branch != master
+  - name: release
+    if: branch = master
