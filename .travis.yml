@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - node
+before_install:
+  - yarn install
+cache: yarn
+jobs:
+  include:
+    - stage: test
+      script: yarn test
+    - stage: release
+      script: yarn semantic-release
+    - stage: publish
+      if: branch = master
+      npm publish --access public

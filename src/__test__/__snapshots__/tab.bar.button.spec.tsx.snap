@@ -1,0 +1,219 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabBarButton Should render well it is not focused 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "elevation": 12,
+      "flex": 1,
+      "justifyContent": "center",
+      "zIndex": 1,
+    }
+  }
+>
+  <View
+    accessibilityRole="button"
+    accessible={true}
+    focusable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "elevation": 12,
+        "flex": 1,
+        "justifyContent": "center",
+        "opacity": 0,
+        "transform": Array [
+          Object {
+            "translateY": 50,
+          },
+        ],
+        "width": "100%",
+        "zIndex": 12,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "zIndex": 12,
+        }
+      }
+    >
+      <View
+        color="white"
+        focused={false}
+        size={28}
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`TabBarButton Should render well it is not focused 2`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "elevation": 12,
+      "flex": 1,
+      "justifyContent": "center",
+      "zIndex": 1,
+    }
+  }
+>
+  <View
+    accessibilityRole="button"
+    accessible={true}
+    focusable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "borderRadius": 32,
+        "elevation": 10,
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 1,
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "translateY": -18,
+          },
+        ],
+        "width": 60,
+        "zIndex": -1,
+      }
+    }
+  >
+    <View
+      color="white"
+      focused={false}
+      size={28}
+    />
+  </View>
+</View>
+`;
+
+exports[`TabBarButton Should render well when it's Focus 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "elevation": 12,
+      "flex": 1,
+      "justifyContent": "center",
+      "zIndex": 1,
+    }
+  }
+>
+  <View
+    accessibilityRole="button"
+    accessible={true}
+    focusable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "elevation": 12,
+        "flex": 1,
+        "justifyContent": "center",
+        "opacity": 0,
+        "transform": Array [
+          Object {
+            "translateY": 50,
+          },
+        ],
+        "width": "100%",
+        "zIndex": 12,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "zIndex": 12,
+        }
+      }
+    >
+      <View />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`TabBarButton Should render well when it's Focus 2`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "elevation": 12,
+      "flex": 1,
+      "justifyContent": "center",
+      "zIndex": 1,
+    }
+  }
+>
+  <View
+    accessibilityRole="button"
+    accessible={true}
+    focusable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "borderRadius": 32,
+        "elevation": 10,
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 1,
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "translateY": -18,
+          },
+        ],
+        "width": 60,
+        "zIndex": -1,
+      }
+    }
+  >
+    <View
+      color="white"
+      focused={true}
+      size={28}
+    />
+  </View>
+</View>
+`;

@@ -1,0 +1,104 @@
+{
+  "name": "rn-wave-bottom-bar",
+  "version": "0.1.0-development",
+  "description": "Animated bottom bar for react-navigation.",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
+  "types": "lib/typescript/index.d.ts",
+  "react-native": "lib/module/index.js",
+  "files": [
+    "src",
+    "lib"
+  ],
+  "scripts": {
+    "test": "jest",
+    "typescript": "tsc --noEmit",
+    "prepare": "bob build",
+    "typescript:lint": "tslint --fix",
+    "typescript:typescheck": "tsc -p tsconfig.json --noEmit",
+    "semantic-release": "semantic-release"
+  },
+  "@react-native-community/bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  },
+  "keywords": [
+    "react-native",
+    "react-navigation",
+    "bottom-bar",
+    "tab-bar"
+  ],
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged && yarn typescript:typescheck"
+    }
+  },
+  "lint-staged": {
+    "**/*.ts?(x)": [
+      "yarn typescript:lint"
+    ]
+  },
+  "author": "jeremy.barbe.zion@gmail.com",
+  "license": "MIT",
+  "peerDependencies": {
+    "@react-navigation/bottom-tabs": "*",
+    "@react-navigation/native": "*",
+    "react": "*",
+    "react-native": "*",
+    "react-native-svg": "*",
+    "react-native-vector-icons": "*"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.10.2",
+    "d3-shape": "^1.3.7",
+    "react-native-safe-area-context": "^3.0.2",
+    "react-native-size-matters": "^0.3.0",
+    "react-native-svg": "^12.1.0",
+    "react-native-testing-library": "^2.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/runtime": "^7.9.2",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@react-native-community/bob": "^0.10.0",
+    "@react-navigation/native": "^5.5.0",
+    "@types/jest": "^25.1.4",
+    "@types/react": "^16.9.23",
+    "@types/react-native": "^0.61.21",
+    "@types/react-native-vector-icons": "^6.4.5",
+    "@types/react-test-renderer": "^16.9.2",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "lint-staged": "^10.0.8",
+    "metro-react-native-babel-preset": "^0.58.0",
+    "react": "^16.13.0",
+    "react-native": "^0.61.5",
+    "react-native-svg": "^12.0.3",
+    "react-native-typescript-transformer": "^1.2.13",
+    "react-native-vector-icons": "^6.6.0",
+    "react-test-renderer": "^16.13.0",
+    "semantic-release": "^17.0.4",
+    "ts-jest": "^25.2.1",
+    "tslint": "^6.0.0",
+    "tslint-react": "^4.2.0",
+    "typescript": "^3.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jm-Zion/rn-wave-bottom-bar.git"
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ]
+}
