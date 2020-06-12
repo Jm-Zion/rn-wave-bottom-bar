@@ -13,10 +13,11 @@
   "scripts": {
     "test": "jest",
     "typescript": "tsc --noEmit",
-    "prepare": "bob build",
+    "prepare": "yarn run snyk-protect && bob build",
     "typescript:lint": "tslint --fix",
     "typescript:typescheck": "tsc -p tsconfig.json --noEmit",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "snyk-protect": "snyk protect"
   },
   "@react-native-community/bob": {
     "source": "src",
@@ -63,7 +64,8 @@
     "react-native-safe-area-context": "^3.0.2",
     "react-native-size-matters": "^0.3.0",
     "react-native-svg": "^12.1.0",
-    "react-native-testing-library": "^2.0.1"
+    "react-native-testing-library": "^2.0.1",
+    "snyk": "^1.339.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
@@ -100,5 +102,6 @@
   "eslintIgnore": [
     "node_modules/",
     "lib/"
-  ]
+  ],
+  "snyk": true
 }
