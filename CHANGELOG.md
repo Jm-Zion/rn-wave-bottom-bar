@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v1.0.0...v1.0.1) (2020-06-16)
+
+
+### Bug Fixes
+
+* **path:** remove paths from tsconfig ([910f709](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/910f709c77c0c393b79e12169cf7809758d83e0b))
+
 # 1.0.0 (2020-06-15)
 
 
