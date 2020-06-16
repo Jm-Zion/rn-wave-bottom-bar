@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v1.0.1...v1.0.2) (2020-06-16)
+
+
+### Bug Fixes
+
+* **dependencies:** move react-native-testing-library to dev dependencies ([21aa1d2](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/21aa1d24eeb68c8ae491b997df9a832c8c54038d))
+
 ## [1.0.1](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v1.0.0...v1.0.1) (2020-06-16)
 
 
