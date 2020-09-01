@@ -56,9 +56,9 @@ export const BarButton: React.FC<Props> = memo(
             {
               transform: [
                 {
-                  translateY: animationValueThreshold.interpolate({
+                  scale: animationValueThreshold.interpolate({
                     inputRange: [0, 1],
-                    outputRange: [50, 0],
+                    outputRange: [0, 1],
                   }),
                 },
               ],

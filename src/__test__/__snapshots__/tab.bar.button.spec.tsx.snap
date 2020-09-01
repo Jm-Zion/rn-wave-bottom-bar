@@ -33,7 +33,7 @@ exports[`TabBarButton Should render well it is not focused 1`] = `
         "opacity": 0,
         "transform": Array [
           Object {
-            "translateY": 50,
+            "scale": 0,
           },
         ],
         "width": "100%",
@@ -144,7 +144,7 @@ exports[`TabBarButton Should render well when it's Focus 1`] = `
         "opacity": 0,
         "transform": Array [
           Object {
-            "translateY": 50,
+            "scale": 0,
           },
         ],
         "width": "100%",
