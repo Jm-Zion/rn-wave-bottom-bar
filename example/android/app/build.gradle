@@ -138,6 +138,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        ndkVersion "21.1.6352462"
     }
     splits {
         abi {

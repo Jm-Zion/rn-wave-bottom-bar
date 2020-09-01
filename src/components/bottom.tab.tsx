@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Animated, Dimensions, StyleSheet, View } from 'react-native';
+import { Animated, Dimensions, StyleProp, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Path, Svg } from 'react-native-svg';
 
@@ -20,18 +20,22 @@ export const defaultSpringConfig = {
   stiffness: 250,
 };
 
-export const FabTabBar: React.FC<
-  BottomTabBarProps & {
-    /**
-     * Bottom bar color
-     */
-    color: string;
-    /**
-     * Custom spring animation config
-     */
-    springConfig?: Animated.SpringAnimationConfig;
-  }
-> = ({
+type CustomProps = {
+  /**
+   * Bottom bar color
+   */
+  color: string;
+  /**
+   * Custom spring animation config
+   */
+  springConfig?: Animated.SpringAnimationConfig;
+  /**
+   * Custom style for bar
+   */
+  bottomBarContainerStyle?: StyleProp<any>;
+};
+
+export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
   state,
   descriptors,
   navigation,
@@ -39,6 +43,7 @@ export const FabTabBar: React.FC<
   activeTintColor,
   inactiveTintColor,
   springConfig,
+  bottomBarContainerStyle,
 }) => {
   const [{ width, height }, setDimensions] = useState({
     width: Dimensions.get('window').width,
@@ -97,6 +102,7 @@ export const FabTabBar: React.FC<
           marginBottom: bottom,
           height: TAB_BAR_HEIGHT,
         },
+        bottomBarContainerStyle,
       ]}
     >
       {bottom > 0 && (
@@ -208,6 +214,4 @@ export const FabTabBar: React.FC<
   );
 };
 
-export default (props: BottomTabBarProps & { color: string }) => (
-  <FabTabBar {...props} />
-);
+export default FabTabBar;

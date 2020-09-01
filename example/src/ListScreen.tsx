@@ -1,19 +1,15 @@
 import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { Avatar, Button, Card } from 'react-native-paper';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeArea } from 'react-native-safe-area-context';
 
 const LeftContent = (props: any) => <Avatar.Icon {...props} icon="folder" />;
 
 export function SettingsScreen() {
+  const {top} = useSafeArea();
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <ScrollView
-        style={{
-          flex: 1,
-          backgroundColor: 'white',
-          marginBottom: -50,
-        }}>
+    <View style={{flex: 1, marginTop: top}}>
+      <ScrollView>
         <View>
           <Card elevation={5} style={{margin: 5}}>
             <Card.Title
@@ -64,7 +60,8 @@ export function SettingsScreen() {
             </Card.Actions>
           </Card>
         </View>
+        {/* <View style={{height: 120}} /> -> Set bottom view to allow scrolling to top if you set bottom-bar position absolute */}
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
