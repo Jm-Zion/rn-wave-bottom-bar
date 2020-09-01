@@ -9,15 +9,15 @@
  */
 
 import React from 'react';
-import {Text, View} from 'react-native';
-import {Provider as PaperProvider} from 'react-native-paper';
+import { Text, View } from 'react-native';
+import { Provider as PaperProvider } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {NavigationContainer} from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 
-import {BottomFabBar} from '../../src';
-import {SettingsScreen} from './ListScreen';
+import { BottomFabBar } from '../../src';
+import { SettingsScreen } from './ListScreen';
 
 const generateScreen = (screen: string) => () => {
   return (
@@ -53,7 +53,20 @@ const App = () => {
           tabBarOptions={{
             activeTintColor: 'purple',
           }}
-          tabBar={props => <BottomFabBar color="purple" {...props} />}>
+          tabBar={(props) => (
+            <BottomFabBar
+              color="purple"
+              // - You can add the style below to show content screen under the tab-bar
+              // - It will makes the "transparent tab bar" effect.
+              // bottomBarContainerStyle={{
+              //   position: 'absolute',
+              //   bottom: 0,
+              //   left: 0,
+              //   right: 0,
+              // }}
+              {...props}
+            />
+          )}>
           <Tab.Screen
             options={{tabBarIcon: tabBarIcon('aliwangwang-o1')}}
             name="Home"
