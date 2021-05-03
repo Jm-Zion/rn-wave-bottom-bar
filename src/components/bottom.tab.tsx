@@ -61,7 +61,6 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
   navigation,
   springConfig,
   bottomBarContainerStyle,
-  isRtl = false,
   focusedButtonStyle,
   mode = 'default',
   isRtl = false,
