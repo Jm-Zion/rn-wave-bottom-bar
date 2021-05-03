@@ -91,6 +91,7 @@ const App = () => {
                 right: 0,
               }}
               {...props}
+				      isRtl={false}
             />
           )}>
           <Tab.Screen
