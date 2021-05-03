@@ -58,13 +58,15 @@ const App = () => {
               color="purple"
               // - You can add the style below to show content screen under the tab-bar
               // - It will makes the "transparent tab bar" effect.
-              // bottomBarContainerStyle={{
-              //   position: 'absolute',
-              //   bottom: 0,
-              //   left: 0,
-              //   right: 0,
-              // }}
+              bottomBarContainerStyle={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+					//  direction: 'rtl',
+              }}
               {...props}
+				  isRtl={false}
             />
           )}>
           <Tab.Screen

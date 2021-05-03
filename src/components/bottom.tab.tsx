@@ -33,6 +33,10 @@ type CustomProps = {
    * Custom style for bar
    */
   bottomBarContainerStyle?: StyleProp<any>;
+  /**
+	* Direction rtl or ltr
+	*/
+  isRtl?: Boolean;
 };
 
 export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
@@ -44,6 +48,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
   inactiveTintColor,
   springConfig,
   bottomBarContainerStyle,
+  isRtl = false,
 }) => {
   const [{ width, height }, setDimensions] = useState({
     width: Dimensions.get('window').width,
@@ -58,8 +63,10 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
   ]);
   const tabsRealWidth = width / state.routes.length;
 
+  const initialPoss = isRtl ? width / 2 + (state.routes.length - state.index - 1) * tabsWidthValue : -width + tabsWidthValue * state.index;
+
   const [animatedValueLength] = useState(
-    new Animated.Value(-width + tabsWidthValue * state.index)
+    new Animated.Value(initialPoss)
   );
 
   const offset =
@@ -68,10 +75,10 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
       : (tabsRealWidth - tabWidth) * -1;
 
   useEffect(() => {
-    const newValue = -width + tabsWidthValue * state.index;
+    const newValue = isRtl ? width / 2 + (state.routes.length - state.index - 1) * tabsWidthValue - offset / 2 : -width + tabsWidthValue * state.index - offset / 2;
 
     Animated.spring(animatedValueLength, {
-      toValue: newValue - offset / 2,
+      toValue: newValue,
       ...(springConfig || defaultSpringConfig),
       useNativeDriver: true,
     }).start();
