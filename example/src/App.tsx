@@ -9,15 +9,15 @@
  */
 
 import React from 'react';
-import { Text, View } from 'react-native';
-import { Provider as PaperProvider } from 'react-native-paper';
+import {Text, View} from 'react-native';
+import {Provider as PaperProvider} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {NavigationContainer} from '@react-navigation/native';
 
-import { BottomFabBar } from '../../src';
-import { SettingsScreen } from './ListScreen';
+import {BottomFabBar} from '../../src';
+import {SettingsScreen} from './ListScreen';
 
 const generateScreen = (screen: string) => () => {
   return (
@@ -35,40 +35,49 @@ const generateScreen = (screen: string) => () => {
 
 const Tab = createBottomTabNavigator();
 
-const tabBarIcon = (name: string) => ({
-  focused,
-  color,
-  size,
-}: {
-  focused: boolean;
-  color: string;
-  size: number;
-}) => <Icon name={name} size={28} color={focused ? 'white' : 'white'} />;
+const tabBarIcon =
+  (name: string) =>
+  ({focused, color, size}: {focused: boolean; color: string; size: number}) =>
+    <Icon name={name} size={28} color={focused ? 'white' : 'white'} />;
 
 const App = () => {
   return (
     <PaperProvider>
       <NavigationContainer>
         <Tab.Navigator
-          tabBarOptions={{
-            activeTintColor: 'purple',
+          screenOptions={{
+            tabBarActiveTintColor: '#5F0B65',
+            tabBarActiveBackgroundColor: '#5F0B65',
+            tabBarInactiveBackgroundColor: 'red',
           }}
           tabBar={(props) => (
             <BottomFabBar
-              color="purple"
+              // Add Shadow for active tab bar button
+              focusedButtonStyle={{
+                shadowColor: '#000',
+                shadowOffset: {
+                  width: 0,
+                  height: 7,
+                },
+                shadowOpacity: 0.41,
+                shadowRadius: 9.11,
+                elevation: 14,
+              }}
               // - You can add the style below to show content screen under the tab-bar
               // - It will makes the "transparent tab bar" effect.
-              // bottomBarContainerStyle={{
-              //   position: 'absolute',
-              //   bottom: 0,
-              //   left: 0,
-              //   right: 0,
-              // }}
+              bottomBarContainerStyle={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+              }}
               {...props}
             />
           )}>
           <Tab.Screen
-            options={{tabBarIcon: tabBarIcon('aliwangwang-o1')}}
+            options={{
+              tabBarIcon: tabBarIcon('aliwangwang-o1'),
+            }}
             name="Home"
             component={generateScreen('Home')}
           />
@@ -78,7 +87,11 @@ const App = () => {
             component={generateScreen('Meh')}
           />
           <Tab.Screen
-            options={{tabBarIcon: tabBarIcon('rocket1')}}
+            options={{
+              tabBarIcon: tabBarIcon('rocket1'),
+              tabBarActiveBackgroundColor: '#45014A',
+              tabBarActiveTintColor: 'purple',
+            }}
             name="Settings"
             component={SettingsScreen}
           />

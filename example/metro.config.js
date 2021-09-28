@@ -4,9 +4,7 @@
  *
  * @format
  */
-
 var path = require('path');
-
 module.exports = {
   projectRoot: path.resolve(__dirname),
   resolver: {
@@ -22,7 +20,7 @@ module.exports = {
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,
-        inlineRequires: false,
+        inlineRequires: true,
       },
     }),
   },

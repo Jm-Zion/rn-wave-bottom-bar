@@ -16,7 +16,7 @@ exports[`TabBarButton Should render well it is not focused 1`] = `
     accessibilityRole="button"
     accessible={true}
     focusable={true}
-    isTVSelectable={true}
+    forwardedRef={[Function]}
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -33,7 +33,7 @@ exports[`TabBarButton Should render well it is not focused 1`] = `
         "opacity": 0,
         "transform": Array [
           Object {
-            "scale": 0,
+            "scale": 1,
           },
         ],
         "width": "100%",
@@ -74,7 +74,7 @@ exports[`TabBarButton Should render well it is not focused 2`] = `
     accessibilityRole="button"
     accessible={true}
     focusable={true}
-    isTVSelectable={true}
+    forwardedRef={[Function]}
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -94,7 +94,7 @@ exports[`TabBarButton Should render well it is not focused 2`] = `
         "position": "absolute",
         "transform": Array [
           Object {
-            "translateY": -18,
+            "translateY": 100,
           },
         ],
         "width": 60,
@@ -127,7 +127,7 @@ exports[`TabBarButton Should render well when it's Focus 1`] = `
     accessibilityRole="button"
     accessible={true}
     focusable={true}
-    isTVSelectable={true}
+    forwardedRef={[Function]}
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -181,7 +181,7 @@ exports[`TabBarButton Should render well when it's Focus 2`] = `
     accessibilityRole="button"
     accessible={true}
     focusable={true}
-    isTVSelectable={true}
+    forwardedRef={[Function]}
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}

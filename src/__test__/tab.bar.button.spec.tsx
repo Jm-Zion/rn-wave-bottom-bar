@@ -7,6 +7,12 @@ import { BarButton, TabBarButton } from '../components/tab.bar.button';
 const tabBarIcon = (props: any) => <View {...props} />;
 
 describe('TabBarButton', () => {
+  beforeAll(() => {
+    jest.useFakeTimers();
+  });
+  afterAll(() => {
+    jest.useRealTimers();
+  });
   it("Should render well when it's Focus", () => {
     const tree = renderer.create(
       <BarButton
@@ -17,6 +23,7 @@ describe('TabBarButton', () => {
         onLongPress={jest.fn()}
       />
     );
+    jest.runAllTimers();
     expect(tree.toJSON()).toMatchSnapshot();
   });
   it('Should render well it is not focused', () => {
@@ -29,6 +36,7 @@ describe('TabBarButton', () => {
         onLongPress={jest.fn()}
       />
     );
+    jest.runAllTimers();
     expect(tree.toJSON()).toMatchSnapshot();
   });
   it("Should render well when it's Focus", () => {
@@ -41,6 +49,7 @@ describe('TabBarButton', () => {
         onLongPress={jest.fn()}
       />
     );
+    jest.runAllTimers();
     expect(tree.toJSON()).toMatchSnapshot();
   });
   it('Should render well it is not focused', () => {
@@ -53,6 +62,7 @@ describe('TabBarButton', () => {
         onLongPress={jest.fn()}
       />
     );
+    jest.runAllTimers();
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });

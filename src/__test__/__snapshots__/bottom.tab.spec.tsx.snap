@@ -2,12 +2,12 @@
 
 exports[`FabTabBar Should render 1`] = `
 <Navigator
-  tabBar={[Function]}
-  tabBarOptions={
+  screenOptions={
     Object {
-      "activeTintColor": "purple",
+      "tabBarActiveTintColor": "purple",
     }
   }
+  tabBar={[Function]}
 >
   <Screen
     component={[Function]}

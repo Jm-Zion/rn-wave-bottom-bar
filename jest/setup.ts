@@ -5,6 +5,6 @@ jest.mock('@react-navigation/bottom-tabs', () => {
     createBottomTabNavigator: () => ({
       Navigator: 'Navigator',
       Screen: 'Screen',
-    })
-  }
+    }),
+  };
 });
