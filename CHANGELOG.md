@@ -1,3 +1,17 @@
+# [2.0.0](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v1.0.3...v2.0.0) (2021-10-06)
+
+
+### Code Refactoring
+
+* **bump:** upgrade react-native/react-navigation ([#36](https://github.com/Jm-Zion/rn-wave-bottom-bar/issues/36)) ([b19de4a](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/b19de4ae2024d787a2af97e1bba5b4ebe0de8546))
+
+
+### BREAKING CHANGES
+
+* **bump:** use new bottom-bar api.
+
+* docs(readme): add v2 instructions
+
 ## [1.0.3](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v1.0.2...v1.0.3) (2020-09-03)
 
 
