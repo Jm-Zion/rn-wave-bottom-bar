@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useState } from 'react';
-import { Animated, TouchableOpacity, View } from 'react-native';
+import { Animated, StyleProp, TouchableOpacity, View } from 'react-native';
 
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 
@@ -16,6 +16,7 @@ interface Props {
   inactiveTintColor?: string;
   activeTintColor?: string;
   springConfig?: Animated.SpringAnimationConfig;
+  focusedButtonStyle?: StyleProp<any>;
 }
 
 export const defaultSpringConfig = {
@@ -91,6 +92,7 @@ export const TabBarButton: React.FC<Props> = memo(
     onLongPress,
     activeTintColor,
     springConfig,
+    focusedButtonStyle,
   }) => {
     const [animationValueThreshold] = useState(new Animated.Value(0));
 
@@ -106,6 +108,7 @@ export const TabBarButton: React.FC<Props> = memo(
       <View style={style.wrapper}>
         <AnimatedTouchable
           accessibilityRole="button"
+          accessibilityComponentType="Button"
           accessibilityLabel={options.tabBarAccessibilityLabel}
           testID={options.tabBarTestID}
           onPress={onPress}
@@ -122,6 +125,7 @@ export const TabBarButton: React.FC<Props> = memo(
                 },
               ],
             },
+            isFocused ? focusedButtonStyle : {},
           ]}
           onLongPress={onLongPress}
         >

@@ -15,8 +15,8 @@ describe('FabTabBar', () => {
     const tree = renderer.create(
       <NavigationContainer>
         <Tab.Navigator
-          tabBarOptions={{
-            activeTintColor: 'purple',
+          screenOptions={{
+            tabBarActiveTintColor: 'purple',
           }}
           tabBar={(props: any) => <FabTabBar color="purple" {...props} />}
         >

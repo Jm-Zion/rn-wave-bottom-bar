@@ -27,10 +27,10 @@ module.exports = {
     '^.+\\.tsx?$': 'ts-jest',
   },
   transformIgnorePatterns: [
-    'node_modules/(?!(react-native|react-native-screens|@react-native-community|@react-navigation|react-native-paper|react-native-vector-icons|react-native-paper|react-native-reanimated|react-native-safe-area-view|react-native-gesture-handler)/)',
+    'node_modules/(?!(react-native|@react-native/*|react-native-screens|@react-navigation/bottom-tabs|@react-native-community|@react-navigation|react-native-paper|react-native-vector-icons|react-native-paper|react-native-reanimated|react-native-safe-area-view|react-native-gesture-handler)/)',
   ],
   verbose: true,
   bail: true,
-  setupFiles: ['./setupTest.ts'],
+  setupFiles: ['./jest/setup.ts'],
   cacheDirectory: '.jest/cache',
 };

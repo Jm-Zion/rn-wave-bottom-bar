@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Animated, Dimensions, StyleProp, StyleSheet, View } from 'react-native';
+import {
+  Animated,
+  Dimensions,
+  StyleProp,
+  StyleSheet,
+  View,
+} from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Path, Svg } from 'react-native-svg';
 
@@ -22,10 +28,6 @@ export const defaultSpringConfig = {
 
 type CustomProps = {
   /**
-   * Bottom bar color
-   */
-  color: string;
-  /**
    * Custom spring animation config
    */
   springConfig?: Animated.SpringAnimationConfig;
@@ -33,18 +35,21 @@ type CustomProps = {
    * Custom style for bar
    */
   bottomBarContainerStyle?: StyleProp<any>;
+  /**
+   * Adding additional style for the focused tab button, such as a shadow.
+   */
+  focusedButtonStyle?: StyleProp<any>;
 };
 
 export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
   state,
   descriptors,
   navigation,
-  color,
-  activeTintColor,
-  inactiveTintColor,
   springConfig,
   bottomBarContainerStyle,
+  focusedButtonStyle,
 }) => {
+  console.log({ state, descriptors });
   const [{ width, height }, setDimensions] = useState({
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
@@ -52,10 +57,10 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
   const { bottom } = useSafeAreaInsets();
   const d = getTabShape(width, height, tabWidth, TAB_BAR_HEIGHT);
 
-  const tabsWidthValue = React.useMemo(() => width / state.routes.length, [
-    width,
-    state.routes,
-  ]);
+  const tabsWidthValue = React.useMemo(
+    () => width / state.routes.length,
+    [width, state.routes]
+  );
   const tabsRealWidth = width / state.routes.length;
 
   const [animatedValueLength] = useState(
@@ -110,7 +115,9 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
           style={[
             {
               height: bottom,
-              backgroundColor: color,
+              backgroundColor:
+                Object.values(descriptors)[state.index].options
+                  .tabBarActiveBackgroundColor,
               bottom: bottom * -1,
             },
             style.bottomFill,
@@ -149,8 +156,8 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
               onLongPress={onLongPress}
               index={index}
               isFocused={isFocused}
-              activeTintColor={activeTintColor}
-              inactiveTintColor={inactiveTintColor}
+              activeTintColor={options.tabBarActiveTintColor}
+              inactiveTintColor={options.tabBarInactiveTintColor}
             />
           );
         })}
@@ -171,7 +178,13 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
             transform: [{ translateX: animatedValueLength }],
           }}
         >
-          <Path d={d} fill={color || '#FF5252'} />
+          <Path
+            d={d}
+            fill={
+              Object.values(descriptors)[state.index].options
+                .tabBarActiveBackgroundColor || '#FF5252'
+            }
+          />
         </AnimatedSvg>
       </View>
       {state.routes.map((route: Route<any>, index: number) => {
@@ -199,14 +212,15 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
 
         return (
           <BarButton
+            focusedButtonStyle={focusedButtonStyle}
             key={route.key}
             options={options}
             onPress={onPress}
             onLongPress={onLongPress}
             index={index}
             isFocused={isFocused}
-            activeTintColor={activeTintColor}
-            inactiveTintColor={inactiveTintColor}
+            activeTintColor={options.tabBarActiveTintColor}
+            inactiveTintColor={options.tabBarInactiveTintColor}
           />
         );
       })}
