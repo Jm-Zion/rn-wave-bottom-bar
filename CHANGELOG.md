@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.0.0...v2.1.0) (2022-02-12)
+
+
+### Features
+
+* **tabs:** enable label and square shape feature ([#42](https://github.com/Jm-Zion/rn-wave-bottom-bar/issues/42)) ([088aca3](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/088aca32ae5fe9aa4b6f6db3320722c4af9d70f2))
+
 # [2.0.0](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v1.0.3...v2.0.0) (2021-10-06)
 
 
