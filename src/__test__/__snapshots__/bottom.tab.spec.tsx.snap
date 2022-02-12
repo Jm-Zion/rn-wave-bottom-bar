@@ -5,6 +5,7 @@ exports[`FabTabBar Should render 1`] = `
   screenOptions={
     Object {
       "tabBarActiveTintColor": "purple",
+      "tabBarInactiveTintColor": "white",
     }
   }
   tabBar={[Function]}
@@ -15,6 +16,7 @@ exports[`FabTabBar Should render 1`] = `
     options={
       Object {
         "tabBarIcon": [Function],
+        "tabBarLabel": "Home",
       }
     }
   />
@@ -24,6 +26,40 @@ exports[`FabTabBar Should render 1`] = `
     options={
       Object {
         "tabBarIcon": [Function],
+        "tabBarLabel": "Settings",
+      }
+    }
+  />
+</Navigator>
+`;
+
+exports[`FabTabBar Should render 2`] = `
+<Navigator
+  screenOptions={
+    Object {
+      "tabBarActiveTintColor": "purple",
+      "tabBarInactiveTintColor": "white",
+    }
+  }
+  tabBar={[Function]}
+>
+  <Screen
+    component={[Function]}
+    name="Home"
+    options={
+      Object {
+        "tabBarIcon": [Function],
+        "tabBarLabel": "Home",
+      }
+    }
+  />
+  <Screen
+    component={[Function]}
+    name="Home"
+    options={
+      Object {
+        "tabBarIcon": [Function],
+        "tabBarLabel": "Settings",
       }
     }
   />
