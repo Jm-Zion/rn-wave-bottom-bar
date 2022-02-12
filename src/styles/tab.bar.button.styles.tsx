@@ -8,6 +8,9 @@ export const style = StyleSheet.create({
     zIndex: 1,
     elevation: 12,
   },
+  squareFocusedButton: {
+    borderRadius: 16,
+  },
   focusedButton: {
     position: 'absolute',
     height: 60,

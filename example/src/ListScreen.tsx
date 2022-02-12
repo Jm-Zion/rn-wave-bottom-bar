@@ -1,7 +1,7 @@
 import React from 'react';
 import {ScrollView, Text, View} from 'react-native';
 import {Avatar, Button, Card} from 'react-native-paper';
-import {SafeAreaView, useSafeArea} from 'react-native-safe-area-context';
+import {useSafeArea} from 'react-native-safe-area-context';
 
 const LeftContent = (props: any) => <Avatar.Icon {...props} icon="folder" />;
 

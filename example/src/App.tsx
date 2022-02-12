@@ -9,7 +9,7 @@
  */
 
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, Switch} from 'react-native';
 import {Provider as PaperProvider} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/AntDesign';
 
@@ -41,17 +41,36 @@ const tabBarIcon =
     <Icon name={name} size={28} color={focused ? 'white' : 'white'} />;
 
 const App = () => {
+  const [showLabel, setShowLabel] = React.useState(false);
+  const [enableSquare, setEnableSquare] = React.useState(false);
+
+  const Home = () => (
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>Enable TabBar labels</Text>
+      <Switch
+        value={showLabel}
+        onValueChange={() => setShowLabel(!showLabel)}
+      />
+      <Text>Enable TabBar Square</Text>
+      <Switch
+        value={enableSquare}
+        onValueChange={() => setEnableSquare(!enableSquare)}
+      />
+    </View>
+  );
   return (
     <PaperProvider>
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={{
             tabBarActiveTintColor: '#5F0B65',
+            tabBarInactiveTintColor: 'white',
             tabBarActiveBackgroundColor: '#5F0B65',
             tabBarInactiveBackgroundColor: 'red',
           }}
           tabBar={(props) => (
             <BottomFabBar
+              mode={enableSquare ? 'square' : 'default'}
               // Add Shadow for active tab bar button
               focusedButtonStyle={{
                 shadowColor: '#000',
@@ -77,13 +96,17 @@ const App = () => {
           <Tab.Screen
             options={{
               tabBarIcon: tabBarIcon('aliwangwang-o1'),
+              tabBarLabel: showLabel ? 'Home' : undefined,
             }}
             name="Home"
-            component={generateScreen('Home')}
+            component={Home}
           />
           <Tab.Screen
             name="Meh"
-            options={{tabBarIcon: tabBarIcon('meh')}}
+            options={{
+              tabBarIcon: tabBarIcon('meh'),
+              tabBarLabel: showLabel ? 'Meh' : undefined,
+            }}
             component={generateScreen('Meh')}
           />
           <Tab.Screen
@@ -91,17 +114,24 @@ const App = () => {
               tabBarIcon: tabBarIcon('rocket1'),
               tabBarActiveBackgroundColor: '#45014A',
               tabBarActiveTintColor: 'purple',
+              tabBarLabel: showLabel ? 'Rocket' : undefined,
             }}
             name="Settings"
             component={SettingsScreen}
           />
           <Tab.Screen
-            options={{tabBarIcon: tabBarIcon('Trophy')}}
+            options={{
+              tabBarIcon: tabBarIcon('Trophy'),
+              tabBarLabel: showLabel ? 'Trophy' : undefined,
+            }}
             name="Trophy"
             component={generateScreen('Trophy')}
           />
           <Tab.Screen
-            options={{tabBarIcon: tabBarIcon('wallet')}}
+            options={{
+              tabBarIcon: tabBarIcon('wallet'),
+              tabBarLabel: showLabel ? 'Wallet' : undefined,
+            }}
             name="Wallet"
             component={generateScreen('Wallet')}
           />

@@ -15,6 +15,7 @@ import { Route } from '@react-navigation/native';
 import { style, TAB_BAR_HEIGHT } from '../styles/bottom.tab.styles';
 import FabBarButton, { BarButton } from './tab.bar.button';
 import { getTabShape } from './tab.shape';
+import { getSquareTabShape } from './tab.square.shape';
 
 const AnimatedSvg = Animated.createAnimatedComponent(Svg);
 
@@ -27,6 +28,7 @@ export const defaultSpringConfig = {
 };
 
 type CustomProps = {
+  mode: 'default' | 'square';
   /**
    * Custom spring animation config
    */
@@ -48,6 +50,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
   springConfig,
   bottomBarContainerStyle,
   focusedButtonStyle,
+  mode = 'default',
 }) => {
   console.log({ state, descriptors });
   const [{ width, height }, setDimensions] = useState({
@@ -55,7 +58,10 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
     height: Dimensions.get('window').height,
   });
   const { bottom } = useSafeAreaInsets();
-  const d = getTabShape(width, height, tabWidth, TAB_BAR_HEIGHT);
+  const d =
+    mode === 'default'
+      ? getTabShape(width, height, tabWidth, TAB_BAR_HEIGHT)
+      : getSquareTabShape(width, height, tabWidth, TAB_BAR_HEIGHT);
 
   const tabsWidthValue = React.useMemo(
     () => width / state.routes.length,
@@ -150,6 +156,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
 
           return (
             <FabBarButton
+              mode={mode}
               key={route.key}
               options={options}
               onPress={onPress}
@@ -212,6 +219,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
 
         return (
           <BarButton
+            mode={mode}
             focusedButtonStyle={focusedButtonStyle}
             key={route.key}
             options={options}

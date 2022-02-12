@@ -44,6 +44,7 @@ exports[`TabBarButton Should render well it is not focused 1`] = `
     <View
       style={
         Object {
+          "alignItems": "center",
           "zIndex": 12,
         }
       }
@@ -87,6 +88,59 @@ exports[`TabBarButton Should render well it is not focused 2`] = `
         "alignItems": "center",
         "backgroundColor": "white",
         "borderRadius": 32,
+        "elevation": 10,
+        "height": 60,
+        "justifyContent": "center",
+        "opacity": 1,
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "translateY": 100,
+          },
+        ],
+        "width": 60,
+        "zIndex": -1,
+      }
+    }
+  >
+    <View
+      color="white"
+      focused={false}
+      size={28}
+    />
+  </View>
+</View>
+`;
+
+exports[`TabBarButton Should render well it is not focused 3`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "elevation": 12,
+      "flex": 1,
+      "justifyContent": "center",
+      "zIndex": 1,
+    }
+  }
+>
+  <View
+    accessibilityRole="button"
+    accessible={true}
+    focusable={true}
+    forwardedRef={[Function]}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "borderRadius": 16,
         "elevation": 10,
         "height": 60,
         "justifyContent": "center",
@@ -155,6 +209,7 @@ exports[`TabBarButton Should render well when it's Focus 1`] = `
     <View
       style={
         Object {
+          "alignItems": "center",
           "zIndex": 12,
         }
       }

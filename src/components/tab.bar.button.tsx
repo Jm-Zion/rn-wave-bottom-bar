@@ -1,13 +1,21 @@
 import React, { memo, useEffect, useState } from 'react';
-import { Animated, StyleProp, TouchableOpacity, View } from 'react-native';
+import {
+  Animated,
+  StyleProp,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 
 import { style } from '../styles/tab.bar.button.styles';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
+const AnimatedText = Animated.createAnimatedComponent(Text);
 
 interface Props {
+  mode: 'default' | 'square';
   index: number;
   isFocused: boolean;
   onPress: () => void;
@@ -67,7 +75,7 @@ export const BarButton: React.FC<Props> = memo(
           ]}
           onLongPress={onLongPress}
         >
-          <View style={{ zIndex: 12 }}>
+          <View style={{ zIndex: 12, alignItems: 'center' }}>
             {options.tabBarIcon && !isFocused ? (
               options.tabBarIcon({
                 focused: isFocused,
@@ -76,6 +84,24 @@ export const BarButton: React.FC<Props> = memo(
               })
             ) : (
               <View />
+            )}
+            {options.tabBarLabel && (
+              <AnimatedText
+                style={[
+                  {
+                    marginTop: 2,
+                    color: inactiveTintColor,
+                  },
+                  {
+                    opacity: animationValueThreshold.interpolate({
+                      inputRange: [0.5, 1],
+                      outputRange: [0, 1],
+                    }),
+                  },
+                ]}
+              >
+                {options.tabBarLabel}
+              </AnimatedText>
             )}
           </View>
         </AnimatedTouchable>
@@ -93,6 +119,7 @@ export const TabBarButton: React.FC<Props> = memo(
     activeTintColor,
     springConfig,
     focusedButtonStyle,
+    mode,
   }) => {
     const [animationValueThreshold] = useState(new Animated.Value(0));
 
@@ -115,6 +142,7 @@ export const TabBarButton: React.FC<Props> = memo(
           style={[
             {
               ...style.focusedButton,
+              ...(mode === 'square' ? style.squareFocusedButton : {}),
               backgroundColor: activeTintColor || 'white',
               transform: [
                 {
