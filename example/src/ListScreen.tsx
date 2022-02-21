@@ -1,14 +1,14 @@
 import React from 'react';
 import {ScrollView, Text, View} from 'react-native';
 import {Avatar, Button, Card} from 'react-native-paper';
-import {useSafeArea} from 'react-native-safe-area-context';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const LeftContent = (props: any) => <Avatar.Icon {...props} icon="folder" />;
 
 export function SettingsScreen() {
-  const {top} = useSafeArea();
+  const {bottom} = useSafeAreaInsets();
   return (
-    <View style={{flex: 1, marginTop: top}}>
+    <View style={{flex: 1, marginBottom: bottom}}>
       <ScrollView>
         <View>
           <Card elevation={5} style={{margin: 5}}>
