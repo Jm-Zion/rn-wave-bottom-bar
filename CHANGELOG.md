@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.1.0...v2.1.1) (2022-02-21)
+
+
+### Bug Fixes
+
+* **tab-bar:** apply tab-bar style from navigation options to tab-bar ([#44](https://github.com/Jm-Zion/rn-wave-bottom-bar/issues/44)) ([9a05547](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/9a0554781ab27b59543b6629a7f40c1eedd9301b))
+
 # [2.1.0](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.0.0...v2.1.0) (2022-02-12)
 
 
