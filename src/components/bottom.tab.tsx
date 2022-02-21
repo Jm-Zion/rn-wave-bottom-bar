@@ -52,7 +52,8 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
   focusedButtonStyle,
   mode = 'default',
 }) => {
-  console.log({ state, descriptors });
+  const currentDescriptor = descriptors[state.routes[state.index].key];
+
   const [{ width, height }, setDimensions] = useState({
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
@@ -114,6 +115,8 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
           height: TAB_BAR_HEIGHT,
         },
         bottomBarContainerStyle,
+        // apply style from descriptor
+        currentDescriptor.options.tabBarStyle,
       ]}
     >
       {bottom > 0 && (

@@ -121,6 +121,9 @@ const App = () => {
           />
           <Tab.Screen
             options={{
+              tabBarStyle: {
+                display: 'none',
+              },
               tabBarIcon: tabBarIcon('Trophy'),
               tabBarLabel: showLabel ? 'Trophy' : undefined,
             }}

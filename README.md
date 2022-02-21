@@ -20,6 +20,11 @@ npm install rn-wave-bottom-bar --save
 
 - React-Navigation v6 installed : https://reactnavigation.org/
 
+## :sparkles: What's new in 2.0.1
+
+- New tab bar button shape : square
+- Now support tabBarLabel
+
 ## ⚒️ Usage
 
 ```jsx
@@ -31,6 +36,7 @@ npm install rn-wave-bottom-bar --save
   }}
   tabBar={(props) => (
     <BottomFabBar
+      mode={'square' | 'default'}
       // Add Shadow for active tab bar button
       focusedButtonStyle={{
         shadowColor: '#000',

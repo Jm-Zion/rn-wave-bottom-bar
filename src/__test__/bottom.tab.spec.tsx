@@ -52,9 +52,7 @@ describe('FabTabBar', () => {
             tabBarActiveTintColor: 'purple',
             tabBarInactiveTintColor: 'white',
           }}
-          tabBar={(props: any) => (
-            <FabTabBar mode="square" color="purple" {...props} />
-          )}
+          tabBar={(props) => <FabTabBar mode="square" {...props} />}
         >
           <Tab.Screen
             options={{ tabBarIcon, tabBarLabel: 'Home' }}
