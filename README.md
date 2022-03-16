@@ -6,6 +6,8 @@ Custom animated bottom-tab-bar for react-native.
 
 ## 💾 Installation
 
+Make sure you installed `react-native-safe-area-context` before installing the library : https
+
 ```
 yarn add rn-wave-bottom-bar
 ```
