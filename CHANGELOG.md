@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.1.1...v2.1.2) (2022-03-16)
+
+
+### Bug Fixes
+
+* **deps:** fix deps instance collision ([#49](https://github.com/Jm-Zion/rn-wave-bottom-bar/issues/49)) ([77c88e9](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/77c88e9e1e65e7eafe9a595d2e6ea5f67c65be63))
+
 ## [2.1.1](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.1.0...v2.1.1) (2022-02-21)
 
 
