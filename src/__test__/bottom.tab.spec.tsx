@@ -15,13 +15,14 @@ describe('FabTabBar', () => {
     const tree = renderer.create(
       <NavigationContainer>
         <Tab.Navigator
-          tabBarOptions={{
-            activeTintColor: 'purple',
+          screenOptions={{
+            tabBarActiveTintColor: 'purple',
+            tabBarInactiveTintColor: 'white',
           }}
-          tabBar={(props: any) => <FabTabBar color="purple" {...props} />}
+          tabBar={(props) => <FabTabBar mode="default" {...props} />}
         >
           <Tab.Screen
-            options={{ tabBarIcon }}
+            options={{ tabBarIcon, tabBarLabel: 'Home' }}
             name="Home"
             component={() => (
               <View>
@@ -30,7 +31,40 @@ describe('FabTabBar', () => {
             )}
           />
           <Tab.Screen
-            options={{ tabBarIcon }}
+            options={{ tabBarIcon, tabBarLabel: 'Settings' }}
+            name="Home"
+            component={() => (
+              <View>
+                <Text>Settings</Text>
+              </View>
+            )}
+          />
+        </Tab.Navigator>
+      </NavigationContainer>
+    );
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+  it('Should render', () => {
+    const tree = renderer.create(
+      <NavigationContainer>
+        <Tab.Navigator
+          screenOptions={{
+            tabBarActiveTintColor: 'purple',
+            tabBarInactiveTintColor: 'white',
+          }}
+          tabBar={(props) => <FabTabBar mode="square" {...props} />}
+        >
+          <Tab.Screen
+            options={{ tabBarIcon, tabBarLabel: 'Home' }}
+            name="Home"
+            component={() => (
+              <View>
+                <Text>Home</Text>
+              </View>
+            )}
+          />
+          <Tab.Screen
+            options={{ tabBarIcon, tabBarLabel: 'Settings' }}
             name="Home"
             component={() => (
               <View>

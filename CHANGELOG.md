@@ -1,3 +1,38 @@
+## [2.1.2](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.1.1...v2.1.2) (2022-03-16)
+
+
+### Bug Fixes
+
+* **deps:** fix deps instance collision ([#49](https://github.com/Jm-Zion/rn-wave-bottom-bar/issues/49)) ([77c88e9](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/77c88e9e1e65e7eafe9a595d2e6ea5f67c65be63))
+
+## [2.1.1](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.1.0...v2.1.1) (2022-02-21)
+
+
+### Bug Fixes
+
+* **tab-bar:** apply tab-bar style from navigation options to tab-bar ([#44](https://github.com/Jm-Zion/rn-wave-bottom-bar/issues/44)) ([9a05547](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/9a0554781ab27b59543b6629a7f40c1eedd9301b))
+
+# [2.1.0](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.0.0...v2.1.0) (2022-02-12)
+
+
+### Features
+
+* **tabs:** enable label and square shape feature ([#42](https://github.com/Jm-Zion/rn-wave-bottom-bar/issues/42)) ([088aca3](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/088aca32ae5fe9aa4b6f6db3320722c4af9d70f2))
+
+# [2.0.0](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v1.0.3...v2.0.0) (2021-10-06)
+
+
+### Code Refactoring
+
+* **bump:** upgrade react-native/react-navigation ([#36](https://github.com/Jm-Zion/rn-wave-bottom-bar/issues/36)) ([b19de4a](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/b19de4ae2024d787a2af97e1bba5b4ebe0de8546))
+
+
+### BREAKING CHANGES
+
+* **bump:** use new bottom-bar api.
+
+* docs(readme): add v2 instructions
+
 ## [1.0.3](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v1.0.2...v1.0.3) (2020-09-03)
 
 
