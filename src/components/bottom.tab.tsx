@@ -46,7 +46,6 @@ type CustomProps = {
    * Adding additional style for the focused tab button, such as a shadow.
    */
   focusedButtonStyle?: StyleProp<any>;
-
 };
 
 type CustomTabNavigationOptionsProps = {
@@ -65,6 +64,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
   isRtl = false,
   focusedButtonStyle,
   mode = 'default',
+  isRtl = false,
 }) => {
   const currentOptions = descriptors[state.routes[state.index].key].options as CustomTabNavigationOptionsProps;
 

@@ -1,6 +1,7 @@
 # rn-wave-bottom-bar [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) [![Build Status](https://travis-ci.org/Jm-Zion/rn-wave-bottom-bar.svg?branch=master)](https://travis-ci.org/Jm-Zion/rn-wave-bottom-bar) [![Known Vulnerabilities](https://snyk.io/test/github/Jm-Zion/rn-wave-bottom-bar/badge.svg)](https://snyk.io/test/github/Jm-Zion/rn-wave-bottom-bar) [![CodeFactor](https://www.codefactor.io/repository/github/jm-zion/rn-wave-bottom-bar/badge)](https://www.codefactor.io/repository/github/jm-zion/rn-wave-bottom-bar)
 
 ![Sample](./sample.gif)
+## Updated rtl/ltr props from https://github.com/Jm-Zion/rn-wave-bottom-bar
 
 Custom animated bottom-tab-bar for react-native.
 
