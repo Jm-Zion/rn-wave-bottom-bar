@@ -4,7 +4,6 @@ export const TAB_BAR_HEIGHT = 64;
 
 export const style = StyleSheet.create({
   container: {
-    flexDirection: 'row',
     height: TAB_BAR_HEIGHT,
     backgroundColor: 'transparent',
   },
@@ -17,7 +16,6 @@ export const style = StyleSheet.create({
   fabButtonsContainer: {
     position: 'absolute',
     flex: 1,
-    flexDirection: 'row',
     width: '100%',
     zIndex: -1,
     height: TAB_BAR_HEIGHT,
