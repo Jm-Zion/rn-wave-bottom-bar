@@ -5,12 +5,11 @@ import {
   StyleProp,
   StyleSheet,
   View,
-  ViewStyle,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Path, Svg } from 'react-native-svg';
 
-import { BottomTabBarProps, BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
+import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { Route } from '@react-navigation/native';
 
 import { style, TAB_BAR_HEIGHT } from '../styles/bottom.tab.styles';
@@ -39,21 +38,14 @@ type CustomProps = {
    */
   bottomBarContainerStyle?: StyleProp<any>;
   /**
-  * Direction rtl or ltr
-	*/
-  isRtl?: Boolean;
-  /**
    * Adding additional style for the focused tab button, such as a shadow.
    */
   focusedButtonStyle?: StyleProp<any>;
+	/**
+  * Direction rtl or ltr
+	*/
+  isRtl?: Boolean;
 };
-
-type CustomTabNavigationOptionsProps = {
-  tabBarStyle: ViewStyle;
-  tabBarActiveBackgroundColor: string;
-  tabBarActiveTintColor: string;
-  tabBarInactiveTintColor: string;
-} & BottomTabNavigationOptions;
 
 export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
   state,
@@ -65,7 +57,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
   mode = 'default',
   isRtl = false,
 }) => {
-  const currentOptions = descriptors[state.routes[state.index].key].options as CustomTabNavigationOptionsProps;
+  const currentDescriptor = descriptors[state.routes[state.index].key];
 
   const [{ width, height }, setDimensions] = useState({
     width: Dimensions.get('window').width,
@@ -82,11 +74,10 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
     [width, state.routes]
   );
   const tabsRealWidth = width / state.routes.length;
-  const routedOptions = Object.values(descriptors)[state.index].options as CustomTabNavigationOptionsProps;
 
-  const initialPoss = isRtl ? -width + tabsWidthValue * (state.routes.length - state.index) : -width + tabsWidthValue * state.index;
+  const initialPoss = isRtl ? width / 2 + (state.routes.length - state.index - 1) * tabsWidthValue : -width + tabsWidthValue * state.index;
 
-  const [animatedValueLength, setAnimatedValueLength] = useState(
+  const [animatedValueLength] = useState(
     new Animated.Value(initialPoss)
   );
 
@@ -96,11 +87,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
       : (tabsRealWidth - tabWidth) * -1;
 
   useEffect(() => {
-    setAnimatedValueLength(new Animated.Value(initialPoss))
-  }, [isRtl]);
-
-  useEffect(() => {
-    const newValue = isRtl ? -width + tabsWidthValue * (state.routes.length - state.index - 1) - offset / 2 : -width + tabsWidthValue * state.index - offset / 2;
+    const newValue = isRtl ? width / 2 + (state.routes.length - state.index - 1) * tabsWidthValue - offset / 2 : -width + tabsWidthValue * state.index - offset / 2;
 
     Animated.spring(animatedValueLength, {
       toValue: newValue,
@@ -133,11 +120,10 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
         {
           marginBottom: bottom,
           height: TAB_BAR_HEIGHT,
-          flexDirection: isRtl ? 'row-reverse' : 'row',
         },
         bottomBarContainerStyle,
         // apply style from descriptor
-        currentOptions.tabBarStyle,
+        currentDescriptor.options.tabBarStyle,
       ]}
     >
       {bottom > 0 && (
@@ -146,16 +132,17 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
             {
               height: bottom,
               backgroundColor:
-              routedOptions.tabBarActiveBackgroundColor,
+                Object.values(descriptors)[state.index].options
+                  .tabBarActiveBackgroundColor,
               bottom: bottom * -1,
             },
             style.bottomFill,
           ]}
         />
       )}
-      <View style={[style.fabButtonsContainer, { flexDirection: isRtl ? 'row-reverse' : 'row' }]}>
+      <View style={style.fabButtonsContainer}>
         {state.routes.map((route: Route<any>, index: number) => {
-          const options = descriptors[route.key].options as CustomTabNavigationOptionsProps;
+          const { options } = descriptors[route.key];
           const isFocused = state.index === index;
 
           const onPress = () => {
@@ -211,13 +198,14 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
           <Path
             d={d}
             fill={
-              routedOptions.tabBarActiveBackgroundColor || '#FF5252'
+              Object.values(descriptors)[state.index].options
+                .tabBarActiveBackgroundColor || '#FF5252'
             }
           />
         </AnimatedSvg>
       </View>
       {state.routes.map((route: Route<any>, index: number) => {
-        const options = descriptors[route.key].options as CustomTabNavigationOptionsProps;
+        const { options } = descriptors[route.key];
         const isFocused = state.index === index;
 
         const onPress = () => {

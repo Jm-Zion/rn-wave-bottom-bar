@@ -43,7 +43,6 @@ const tabBarIcon =
 const App = () => {
   const [showLabel, setShowLabel] = React.useState(false);
   const [enableSquare, setEnableSquare] = React.useState(false);
-  const [isRtl, setIsRtl] = React.useState(false);
 
   const Home = () => (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
@@ -56,11 +55,6 @@ const App = () => {
       <Switch
         value={enableSquare}
         onValueChange={() => setEnableSquare(!enableSquare)}
-      />
-      <Text>Enable TabBar Direction RTL/LTR</Text>
-      <Switch
-        value={isRtl}
-        onValueChange={() => setIsRtl(!isRtl)}
       />
     </View>
   );
@@ -97,7 +91,7 @@ const App = () => {
                 right: 0,
               }}
               {...props}
-				      isRtl={isRtl}
+				      isRtl={false}
             />
           )}>
           <Tab.Screen
