@@ -2,12 +2,6 @@
 
 exports[`FabTabBar Should render 1`] = `
 <Navigator
-  screenOptions={
-    Object {
-      "tabBarActiveTintColor": "purple",
-      "tabBarInactiveTintColor": "white",
-    }
-  }
   tabBar={[Function]}
 >
   <Screen
@@ -35,12 +29,6 @@ exports[`FabTabBar Should render 1`] = `
 
 exports[`FabTabBar Should render 2`] = `
 <Navigator
-  screenOptions={
-    Object {
-      "tabBarActiveTintColor": "purple",
-      "tabBarInactiveTintColor": "white",
-    }
-  }
   tabBar={[Function]}
 >
   <Screen
