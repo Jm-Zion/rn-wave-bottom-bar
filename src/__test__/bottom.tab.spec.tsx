@@ -15,6 +15,10 @@ describe('FabTabBar', () => {
     const tree = renderer.create(
       <NavigationContainer>
         <Tab.Navigator
+          screenOptions={{
+            tabBarActiveTintColor: 'purple',
+            tabBarInactiveTintColor: 'white',
+          }}
           tabBar={(props) => <FabTabBar mode="default" {...props} />}
         >
           <Tab.Screen
@@ -44,6 +48,10 @@ describe('FabTabBar', () => {
     const tree = renderer.create(
       <NavigationContainer>
         <Tab.Navigator
+          screenOptions={{
+            tabBarActiveTintColor: 'purple',
+            tabBarInactiveTintColor: 'white',
+          }}
           tabBar={(props) => <FabTabBar mode="square" {...props} />}
         >
           <Tab.Screen
