@@ -87,7 +87,15 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
       ...(springConfig || defaultSpringConfig),
       useNativeDriver: true,
     }).start();
-  }, [width, height, state, tabsWidthValue, offset, animatedValueLength]);
+  }, [
+    width,
+    height,
+    state,
+    tabsWidthValue,
+    offset,
+    animatedValueLength,
+    springConfig,
+  ]);
 
   const [animationValueThreshold] = useState(new Animated.Value(0));
 
@@ -97,7 +105,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
       ...(springConfig || defaultSpringConfig),
       useNativeDriver: true,
     }).start();
-  }, [animationValueThreshold, state.index]);
+  }, [animationValueThreshold, state.index, springConfig]);
 
   return (
     <View
@@ -164,6 +172,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
               options={options}
               onPress={onPress}
               onLongPress={onLongPress}
+              focusedButtonStyle={focusedButtonStyle}
               index={index}
               isFocused={isFocused}
               activeTintColor={options.tabBarActiveTintColor}
@@ -172,12 +181,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
           );
         })}
       </View>
-      <View
-        style={[
-          StyleSheet.absoluteFill,
-          { elevation: 11, zIndex: 0, backgroundColor: 'transparent' },
-        ]}
-      >
+      <View style={[StyleSheet.absoluteFill, style.barShapeWrapper]}>
         <AnimatedSvg
           width={width * 2.5}
           height={height + bottom}

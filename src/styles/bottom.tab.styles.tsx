@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 export const TAB_BAR_HEIGHT = 64;
 
 export const style = StyleSheet.create({
+  barShapeWrapper: { elevation: 11, zIndex: 0, backgroundColor: 'transparent' },
   container: {
     flexDirection: 'row',
     height: TAB_BAR_HEIGHT,
