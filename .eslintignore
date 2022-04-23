@@ -1,0 +1,6 @@
+tsconfig.json
+**/lib/*
+**/ios/*
+**/android/*
+metro.config.js
+jest.config.js

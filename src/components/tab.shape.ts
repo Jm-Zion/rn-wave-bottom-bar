@@ -4,7 +4,7 @@ export const getTabShape = (
   width: number,
   height: number,
   tabWidth: number,
-  tabHeight: number,
+  tabHeight: number
 ) => {
   const left = shape
     .line()
