@@ -8,10 +8,8 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Path, Svg } from 'react-native-svg';
-
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { Route } from '@react-navigation/native';
-
 import { style, TAB_BAR_HEIGHT } from '../styles/bottom.tab.styles';
 import FabBarButton, { BarButton } from './tab.bar.button';
 import { getTabShape } from './tab.shape';
