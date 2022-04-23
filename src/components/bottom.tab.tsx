@@ -32,7 +32,7 @@ type CustomProps = {
   /**
    * Custom spring animation config
    */
-  springConfig?: Animated.SpringAnimationConfig;
+  springConfig?: Omit<Animated.SpringAnimationConfig, 'toValue'>;
   /**
    * Custom style for bar
    */

@@ -9,15 +9,15 @@
  */
 
 import React from 'react';
-import {Text, View, Switch} from 'react-native';
-import {Provider as PaperProvider} from 'react-native-paper';
+import { Text, View, Switch } from 'react-native';
+import { Provider as PaperProvider, TextInput } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {NavigationContainer} from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 
-import {BottomFabBar} from '../../src';
-import {SettingsScreen} from './ListScreen';
+import { BottomFabBar } from '../../src';
+import { SettingsScreen } from './ListScreen';
 
 const generateScreen = (screen: string) => () => {
   return (
@@ -27,7 +27,8 @@ const generateScreen = (screen: string) => () => {
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'white',
-      }}>
+      }}
+    >
       <Text>{screen}!</Text>
     </View>
   );
@@ -37,7 +38,16 @@ const Tab = createBottomTabNavigator();
 
 const tabBarIcon =
   (name: string) =>
-  ({focused, color, size}: {focused: boolean; color: string; size: number}) =>
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  ({
+    focused,
+    color,
+    size,
+  }: {
+    focused: boolean;
+    color: string;
+    size: number;
+  }) =>
     <Icon name={name} size={28} color={focused ? 'white' : 'white'} />;
 
 const App = () => {
@@ -45,7 +55,7 @@ const App = () => {
   const [enableSquare, setEnableSquare] = React.useState(false);
 
   const Home = () => (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Enable TabBar labels</Text>
       <Switch
         value={showLabel}
@@ -76,12 +86,13 @@ const App = () => {
                 shadowColor: '#000',
                 shadowOffset: {
                   width: 0,
-                  height: 7,
+                  height: -1,
                 },
-                shadowOpacity: 0.41,
-                shadowRadius: 9.11,
+                shadowOpacity: 0.61,
+                shadowRadius: 8,
                 elevation: 14,
               }}
+              /* eslint-disable-next-line max-len */
               // - You can add the style below to show content screen under the tab-bar
               // - It will makes the "transparent tab bar" effect.
               bottomBarContainerStyle={{
@@ -90,9 +101,15 @@ const App = () => {
                 left: 0,
                 right: 0,
               }}
+              springConfig={{
+                stiffness: 1500,
+                damping: 85,
+                mass: 4,
+              }}
               {...props}
             />
-          )}>
+          )}
+        >
           <Tab.Screen
             options={{
               tabBarIcon: tabBarIcon('aliwangwang-o1'),
