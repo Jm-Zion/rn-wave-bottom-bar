@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.1.2...v2.1.3) (2022-04-23)
+
+
+### Bug Fixes
+
+* **button:** pass focused button style to FabBarButton ([#56](https://github.com/Jm-Zion/rn-wave-bottom-bar/issues/56)) ([f680021](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/f6800219598c5e2ab95076b168920fd42f1a7f6d)), closes [#52](https://github.com/Jm-Zion/rn-wave-bottom-bar/issues/52)
+
 ## [2.1.2](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.1.1...v2.1.2) (2022-03-16)
 
 
