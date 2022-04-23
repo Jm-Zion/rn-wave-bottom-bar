@@ -8,6 +8,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
+    'comma-dangle': ['error', 'always-multiline'],
     '@typescript-eslint/quotes': [
       1,
       'single',
@@ -30,6 +31,12 @@ module.exports = {
             allowTemplateLiterals: true,
           },
         ],
+      },
+    },
+    {
+      files: ['*.json'],
+      rules: {
+        'comma-dangle': ['error', 'never'],
       },
     },
   ],

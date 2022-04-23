@@ -64,12 +64,12 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
 
   const tabsWidthValue = React.useMemo(
     () => width / state.routes.length,
-    [width, state.routes],
+    [width, state.routes]
   );
   const tabsRealWidth = width / state.routes.length;
 
   const [animatedValueLength] = useState(
-    new Animated.Value(-width + tabsWidthValue * state.index),
+    new Animated.Value(-width + tabsWidthValue * state.index)
   );
 
   const offset =
