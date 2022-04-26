@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FabTabBar Should render 1`] = `
+exports[`FabTabBar Should render default tab 1`] = `
 <Navigator
   screenOptions={
     Object {
@@ -33,7 +33,7 @@ exports[`FabTabBar Should render 1`] = `
 </Navigator>
 `;
 
-exports[`FabTabBar Should render 2`] = `
+exports[`FabTabBar Should render square tab 1`] = `
 <Navigator
   screenOptions={
     Object {
