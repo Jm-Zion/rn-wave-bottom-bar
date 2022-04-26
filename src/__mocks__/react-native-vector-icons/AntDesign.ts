@@ -1,1 +1,1 @@
-export default 'AntDesign'
+export default 'AntDesign';

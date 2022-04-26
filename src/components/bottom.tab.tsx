@@ -9,10 +9,8 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Path, Svg } from 'react-native-svg';
-
 import { BottomTabBarProps, BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 import { Route } from '@react-navigation/native';
-
 import { style, TAB_BAR_HEIGHT } from '../styles/bottom.tab.styles';
 import FabBarButton, { BarButton } from './tab.bar.button';
 import { getTabShape } from './tab.shape';
@@ -33,7 +31,7 @@ type CustomProps = {
   /**
    * Custom spring animation config
    */
-  springConfig?: Animated.SpringAnimationConfig;
+  springConfig?: Omit<Animated.SpringAnimationConfig, 'toValue'>;
   /**
    * Custom style for bar
    */
@@ -107,7 +105,15 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
       ...(springConfig || defaultSpringConfig),
       useNativeDriver: true,
     }).start();
-  }, [width, height, state, tabsWidthValue, offset, animatedValueLength]);
+  }, [
+    width,
+    height,
+    state,
+    tabsWidthValue,
+    offset,
+    animatedValueLength,
+    springConfig,
+  ]);
 
   const [animationValueThreshold] = useState(new Animated.Value(0));
 
@@ -117,7 +123,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
       ...(springConfig || defaultSpringConfig),
       useNativeDriver: true,
     }).start();
-  }, [animationValueThreshold, state.index]);
+  }, [animationValueThreshold, state.index, springConfig]);
 
   return (
     <View
@@ -184,6 +190,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
               options={options}
               onPress={onPress}
               onLongPress={onLongPress}
+              focusedButtonStyle={focusedButtonStyle}
               index={index}
               isFocused={isFocused}
               activeTintColor={options.tabBarActiveTintColor}
@@ -192,12 +199,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
           );
         })}
       </View>
-      <View
-        style={[
-          StyleSheet.absoluteFill,
-          { elevation: 11, zIndex: 0, backgroundColor: 'transparent' },
-        ]}
-      >
+      <View style={[StyleSheet.absoluteFill, style.barShapeWrapper]}>
         <AnimatedSvg
           width={width * 2.5}
           height={height + bottom}

@@ -40,6 +40,7 @@ export const BarButton: React.FC<Props> = memo(
     onPress,
     onLongPress,
     inactiveTintColor,
+    focusedButtonStyle,
     springConfig,
   }) => {
     const [animationValueThreshold] = useState(new Animated.Value(0));
@@ -50,7 +51,7 @@ export const BarButton: React.FC<Props> = memo(
         ...(springConfig || defaultSpringConfig),
         useNativeDriver: true,
       }).start();
-    }, [isFocused, animationValueThreshold]);
+    }, [isFocused, animationValueThreshold, springConfig]);
 
     return (
       <View style={style.wrapper}>
@@ -72,10 +73,11 @@ export const BarButton: React.FC<Props> = memo(
                 },
               ],
             },
+            isFocused ? focusedButtonStyle : {},
           ]}
           onLongPress={onLongPress}
         >
-          <View style={{ zIndex: 12, alignItems: 'center' }}>
+          <View style={style.tabBarLabelWrapper}>
             {options.tabBarIcon && !isFocused ? (
               options.tabBarIcon({
                 focused: isFocused,
@@ -129,7 +131,7 @@ export const TabBarButton: React.FC<Props> = memo(
         ...(springConfig || defaultSpringConfig),
         useNativeDriver: true,
       }).start();
-    }, [isFocused, animationValueThreshold]);
+    }, [isFocused, animationValueThreshold, springConfig]);
 
     return (
       <View style={style.wrapper}>

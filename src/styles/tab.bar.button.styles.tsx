@@ -11,6 +11,7 @@ export const style = StyleSheet.create({
   squareFocusedButton: {
     borderRadius: 16,
   },
+  tabBarLabelWrapper: { zIndex: 12, alignItems: 'center' },
   focusedButton: {
     position: 'absolute',
     height: 60,
