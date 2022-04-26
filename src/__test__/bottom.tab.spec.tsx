@@ -11,7 +11,7 @@ const tabBarIcon = (props: any) => <View {...props} />;
 const Tab = createBottomTabNavigator();
 
 describe('FabTabBar', () => {
-  it('Should render', () => {
+  it('Should render default tab', () => {
     const tree = renderer.create(
       <NavigationContainer>
         <Tab.Navigator
@@ -40,11 +40,11 @@ describe('FabTabBar', () => {
             )}
           />
         </Tab.Navigator>
-      </NavigationContainer>
+      </NavigationContainer>,
     );
     expect(tree.toJSON()).toMatchSnapshot();
   });
-  it('Should render', () => {
+  it('Should render square tab', () => {
     const tree = renderer.create(
       <NavigationContainer>
         <Tab.Navigator
@@ -73,7 +73,7 @@ describe('FabTabBar', () => {
             )}
           />
         </Tab.Navigator>
-      </NavigationContainer>
+      </NavigationContainer>,
     );
     expect(tree.toJSON()).toMatchSnapshot();
   });
