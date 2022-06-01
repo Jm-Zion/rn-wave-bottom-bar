@@ -39,6 +39,7 @@ npm install rn-wave-bottom-bar --save
   tabBar={(props) => (
     <BottomFabBar
       mode={'square' | 'default'}
+      isRtl={false}
       // Add Shadow for active tab bar button
       focusedButtonStyle={{
         shadowColor: '#000',
@@ -172,3 +173,11 @@ Initial Design : https://uimovement.com/design/tab-bar-3/
 ✅ Works well with mosts Devices and tested on iPad, IPhones, Android Devices.
 
 ✅ Support device orientation.
+
+✅ RTL support. (thanks darkhorse-coder)
+
+## More
+
+Checkout our other libraries :
+
+- rn-gauge : https://github.com/Winzana/rn-gauge

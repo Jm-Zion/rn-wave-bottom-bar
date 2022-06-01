@@ -100,6 +100,7 @@ export const BarButton: React.FC<Props> = memo(
                       outputRange: [0, 1],
                     }),
                   },
+                  options.tabBarLabelStyle,
                 ]}
               >
                 {options.tabBarLabel}
@@ -109,7 +110,7 @@ export const BarButton: React.FC<Props> = memo(
         </AnimatedTouchable>
       </View>
     );
-  }
+  },
 );
 
 export const TabBarButton: React.FC<Props> = memo(
@@ -169,7 +170,7 @@ export const TabBarButton: React.FC<Props> = memo(
         </AnimatedTouchable>
       </View>
     );
-  }
+  },
 );
 
 export default TabBarButton;
