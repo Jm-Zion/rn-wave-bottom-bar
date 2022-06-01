@@ -39,6 +39,10 @@ type CustomProps = {
    * Adding additional style for the focused tab button, such as a shadow.
    */
   focusedButtonStyle?: StyleProp<any>;
+  /**
+   * Enable right to left
+   */
+  isRtl?: boolean;
 };
 
 export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
@@ -49,6 +53,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
   bottomBarContainerStyle,
   focusedButtonStyle,
   mode = 'default',
+  isRtl = false,
 }) => {
   const currentDescriptor = descriptors[state.routes[state.index].key];
 
@@ -68,8 +73,12 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
   );
   const tabsRealWidth = width / state.routes.length;
 
-  const [animatedValueLength] = useState(
-    new Animated.Value(-width + tabsWidthValue * state.index)
+  const initialPosition = isRtl
+    ? -width + tabsWidthValue * (state.routes.length - 1 - state.index)
+    : -width + tabsWidthValue * state.index;
+
+  const [animatedValueLength, setAnimatedValueLength] = useState(
+    new Animated.Value(initialPosition)
   );
 
   const offset =
@@ -78,10 +87,12 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
       : (tabsRealWidth - tabWidth) * -1;
 
   useEffect(() => {
-    const newValue = -width + tabsWidthValue * state.index;
+    setAnimatedValueLength(new Animated.Value(initialPosition));
+  }, [isRtl]);
 
+  useEffect(() => {
     Animated.spring(animatedValueLength, {
-      toValue: newValue - offset / 2,
+      toValue: initialPosition - offset / 2,
       ...(springConfig || defaultSpringConfig),
       useNativeDriver: true,
     }).start();
@@ -93,6 +104,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
     offset,
     animatedValueLength,
     springConfig,
+    initialPosition,
   ]);
 
   const [animationValueThreshold] = useState(new Animated.Value(0));
@@ -119,6 +131,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
         {
           marginBottom: bottom,
           height: TAB_BAR_HEIGHT,
+          flexDirection: isRtl ? 'row-reverse' : 'row',
         },
         bottomBarContainerStyle,
         // apply style from descriptor
@@ -139,7 +152,12 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
           ]}
         />
       )}
-      <View style={style.fabButtonsContainer}>
+      <View
+        style={[
+          style.fabButtonsContainer,
+          { flexDirection: isRtl ? 'row-reverse' : 'row' },
+        ]}
+      >
         {state.routes.map((route: Route<any>, index: number) => {
           const { options } = descriptors[route.key];
           const isFocused = state.index === index;

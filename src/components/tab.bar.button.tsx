@@ -100,6 +100,7 @@ export const BarButton: React.FC<Props> = memo(
                       outputRange: [0, 1],
                     }),
                   },
+                  options.tabBarLabelStyle,
                 ]}
               >
                 {options.tabBarLabel}

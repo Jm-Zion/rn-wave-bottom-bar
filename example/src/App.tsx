@@ -53,6 +53,7 @@ const tabBarIcon =
 const App = () => {
   const [showLabel, setShowLabel] = React.useState(false);
   const [enableSquare, setEnableSquare] = React.useState(false);
+  const [isRtl, setIsRtl] = React.useState(false);
 
   const Home = () => (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -66,6 +67,8 @@ const App = () => {
         value={enableSquare}
         onValueChange={() => setEnableSquare(!enableSquare)}
       />
+      <Text>Enable RTL</Text>
+      <Switch value={isRtl} onValueChange={() => setIsRtl(!isRtl)} />
     </View>
   );
   return (
@@ -77,10 +80,14 @@ const App = () => {
             tabBarInactiveTintColor: 'white',
             tabBarActiveBackgroundColor: '#5F0B65',
             tabBarInactiveBackgroundColor: 'red',
+            tabBarLabelStyle: {
+              color: 'purple',
+            },
           }}
           tabBar={(props) => (
             <BottomFabBar
               mode={enableSquare ? 'square' : 'default'}
+              isRtl={isRtl}
               // Add Shadow for active tab bar button
               focusedButtonStyle={{
                 shadowColor: '#000',
