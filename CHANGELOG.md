@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.1.3...v2.2.0) (2022-06-01)
+
+
+### Features
+
+* **rtl:** add RTL support and tabBarLabelStyle support ([#66](https://github.com/Jm-Zion/rn-wave-bottom-bar/issues/66)) ([8244452](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/824445244033dfed5b187e3b33db695bc77d42cb))
+
 ## [2.1.3](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.1.2...v2.1.3) (2022-04-23)
 
 
