@@ -99,7 +99,7 @@
     "react-native-typescript-transformer": "1.2.13",
     "react-native-vector-icons": "6.6.0",
     "react-test-renderer": "16.13.1",
-    "semantic-release": "^17.0.4",
+    "semantic-release": "17.4.7",
     "ts-jest": "25.5.1",
     "tslint": "6.1.2",
     "tslint-react": "4.2.0",
