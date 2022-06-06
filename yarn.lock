@@ -2360,12 +2360,12 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-test-renderer@16.9.2":
-  version "16.9.2"
-  resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-16.9.2.tgz#e1c408831e8183e5ad748fdece02214a7c2ab6c5"
-  integrity sha512-4eJr1JFLIAlWhzDkBCkhrOIWOvOxcCAfQh+jiKg7l/nNZcCIL2MHl2dZhogIFKyHzedVWHaVP1Yydq/Ruu4agw==
+"@types/react-test-renderer@16.9.5":
+  version "16.9.5"
+  resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-16.9.5.tgz#edab67da470f7c3e997f58d55dcfe2643cc30a68"
+  integrity sha512-C4cN7C2uSSGOYelp2XfdtJb5TsCP+QiZ+0Bm4U3ZfUswN8oN9O/l86XO/OvBSFCmWY7w75fzsQvZ50eGkFN34A==
   dependencies:
-    "@types/react" "*"
+    "@types/react" "^16"
 
 "@types/react@*", "@types/react@16.9.36":
   version "16.9.36"
@@ -2375,10 +2375,24 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@types/react@^16":
+  version "16.14.26"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.14.26.tgz#82540a240ba7207ebe87d9579051bc19c9ef7605"
+  integrity sha512-c/5CYyciOO4XdFcNhZW1O2woVx86k4T+DO2RorHZL7EhitkNQgSD/SgpdZJAUJa/qjVgOmTM44gHkAdZSXeQuQ==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
 "@types/retry@^0.12.0":
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.0.tgz#2b35eccfcee7d38cd72ad99232fbd58bffb3c84d"
   integrity sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==
+
+"@types/scheduler@*":
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
+  integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
 
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
@@ -4137,6 +4151,11 @@ csstype@^2.2.0:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.10.tgz#e63af50e66d7c266edb6b32909cfd0aabe03928b"
   integrity sha512-D34BqZU4cIlMCY93rZHbrq9pjTAQJ3U8S8rfBqjwHxkGPThWFjzZDQpgMJY0QViLxth6ZKYiwFBo14RdN44U/w==
+
+csstype@^3.0.2:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.0.tgz#4ddcac3718d787cf9df0d1b7d15033925c8f29f2"
+  integrity sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
