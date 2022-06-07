@@ -87,7 +87,7 @@
     "eslint": "8.13.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.0.0",
-    "husky": "4.2.5",
+    "husky": "4.3.8",
     "jest": "25.5.4",
     "lint-staged": "10.2.10",
     "metro-react-native-babel-preset": "0.58.0",
