@@ -97,7 +97,7 @@
     "react-native-svg": "12.3.0",
     "react-native-testing-library": "2.2.0",
     "react-native-typescript-transformer": "1.2.13",
-    "react-native-vector-icons": "6.7.0",
+    "react-native-vector-icons": "9.1.0",
     "react-test-renderer": "16.14.0",
     "semantic-release": "17.4.7",
     "ts-jest": "25.5.1",
