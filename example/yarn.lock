@@ -5466,10 +5466,10 @@ metro-react-native-babel-preset@0.70.3:
     "@babel/template" "^7.0.0"
     react-refresh "^0.4.0"
 
-metro-react-native-babel-preset@0.71.2:
-  version "0.71.2"
-  resolved "https://registry.yarnpkg.com/metro-react-native-babel-preset/-/metro-react-native-babel-preset-0.71.2.tgz#97ce9769bdffb2399bad5699473fb4a6904040b0"
-  integrity sha512-lIrk6rI/EqDQ+e771sU8RzBNfjXZdmEukuRaaV9fojfc+jp5iGLirfAZLj3ecKfEzqB+bJ+dmQAPSQEgkQl13Q==
+metro-react-native-babel-preset@0.71.3:
+  version "0.71.3"
+  resolved "https://registry.yarnpkg.com/metro-react-native-babel-preset/-/metro-react-native-babel-preset-0.71.3.tgz#8e30b87c39342d9ffb4ccc619e7790ac60e16929"
+  integrity sha512-ym8xeoK/5fY/TsQPQXVnJN822NB9TZglxc2XVk+DM8kJO0XacWh2GtDRFeFHEehVsYWpIZeaDPF2XES+YU5mhA==
   dependencies:
     "@babel/core" "^7.14.0"
     "@babel/plugin-proposal-async-generator-functions" "^7.0.0"
