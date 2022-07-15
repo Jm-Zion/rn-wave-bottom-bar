@@ -94,7 +94,7 @@
     "prettier": "2.7.1",
     "react": "18.2.0",
     "react-native": "0.69.1",
-    "react-native-svg": "12.3.0",
+    "react-native-svg": "12.4.0",
     "react-native-testing-library": "2.2.0",
     "react-native-typescript-transformer": "1.2.13",
     "react-native-vector-icons": "9.2.0",
