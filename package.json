@@ -90,7 +90,7 @@
     "husky": "8.0.1",
     "jest": "28.1.3",
     "lint-staged": "13.0.3",
-    "metro-react-native-babel-preset": "0.71.3",
+    "metro-react-native-babel-preset": "0.72.0",
     "prettier": "2.7.1",
     "react": "18.2.0",
     "react-native": "0.69.3",
