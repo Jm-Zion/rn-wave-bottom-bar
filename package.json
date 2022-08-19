@@ -64,7 +64,7 @@
     "d3-shape": "^3.0.0"
   },
   "devDependencies": {
-    "react-native-safe-area-context": "4.3.1",
+    "react-native-safe-area-context": "4.3.3",
     "@babel/core": "7.18.10",
     "@babel/runtime": "7.18.9",
     "@commitlint/cli": "17.0.3",
