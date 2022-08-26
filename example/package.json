@@ -39,7 +39,7 @@
     "metro-react-native-babel-preset": "0.72.1",
     "react-native-codegen": "0.71.0",
     "react-test-renderer": "18.2.0",
-    "typescript": "4.7.4"
+    "typescript": "4.8.2"
   },
   "jest": {
     "preset": "react-native",
