@@ -79,7 +79,7 @@
     "@semantic-release/release-notes-generator": "10.0.3",
     "@types/jest": "28.1.8",
     "@types/react": "18.0.17",
-    "@types/react-native": "0.69.5",
+    "@types/react-native": "0.69.6",
     "@types/react-native-vector-icons": "6.4.11",
     "@types/react-test-renderer": "18.0.0",
     "@typescript-eslint/eslint-plugin": "5.35.1",
