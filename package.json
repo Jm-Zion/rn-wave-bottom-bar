@@ -82,7 +82,7 @@
     "@types/react-native": "0.69.6",
     "@types/react-native-vector-icons": "6.4.11",
     "@types/react-test-renderer": "18.0.0",
-    "@typescript-eslint/eslint-plugin": "5.35.1",
+    "@typescript-eslint/eslint-plugin": "5.36.0",
     "add": "2.0.6",
     "eslint": "8.23.0",
     "eslint-config-prettier": "8.5.0",
