@@ -27,7 +27,7 @@
     "@babel/core": "7.19.0",
     "@babel/runtime": "7.19.0",
     "@react-native-community/eslint-config": "3.1.0",
-    "@types/jest": "29.0.1",
+    "@types/jest": "29.0.2",
     "@types/react-native": "0.70.0",
     "@types/react-test-renderer": "18.0.0",
     "@typescript-eslint/eslint-plugin": "5.37.0",
