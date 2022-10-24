@@ -78,7 +78,7 @@
     "@semantic-release/npm": "9.0.1",
     "@semantic-release/release-notes-generator": "10.0.3",
     "@types/jest": "29.2.0",
-    "@types/react": "18.0.21",
+    "@types/react": "18.0.22",
     "@types/react-native": "0.70.6",
     "@types/react-native-vector-icons": "6.4.12",
     "@types/react-test-renderer": "18.0.0",
