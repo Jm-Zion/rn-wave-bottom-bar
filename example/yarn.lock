@@ -4019,6 +4019,11 @@ flow-parser@^0.121.0:
   resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.121.0.tgz#9f9898eaec91a9f7c323e9e992d81ab5c58e618f"
   integrity sha512-1gIBiWJNR0tKUNv8gZuk7l9rVX06OuLzY9AoGio7y/JT4V1IZErEMEq2TJS+PFcw/y0RshZ1J/27VfK1UQzYVg==
 
+flow-parser@^0.185.0:
+  version "0.185.2"
+  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.185.2.tgz#cb7ee57f77377d6c5d69a469e980f6332a15e492"
+  integrity sha512-2hJ5ACYeJCzNtiVULov6pljKOLygy0zddoqSI1fFetM+XRPpRshFdGEijtqlamA1XwyZ+7rhryI6FQFzvtLWUQ==
+
 for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -6543,13 +6548,13 @@ react-is@^18.2.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
-react-native-codegen@0.71.0:
-  version "0.71.0"
-  resolved "https://registry.yarnpkg.com/react-native-codegen/-/react-native-codegen-0.71.0.tgz#f6f5006a9f2d00ca3fe624041a128ced6b3fe67c"
-  integrity sha512-QkZapZx7vLNcszJHNkkIaZwsfGiI0quuq3ejJW2C3jMNT+Ed2lkuI8G/sfXAQOWQgX7/9iaeGDxE9Rjiz8EkAg==
+react-native-codegen@0.71.1:
+  version "0.71.1"
+  resolved "https://registry.yarnpkg.com/react-native-codegen/-/react-native-codegen-0.71.1.tgz#4acdd0400b5a5bd39b86adce4273ec36756d1fd9"
+  integrity sha512-dlQP46szdJmoIzyYk4otAeuwWWFqSmDgLkL8dJj1tEbZngi/oQm2fSHBkcw/xOlsU3b8mvzq0lBdnkjim2hm2A==
   dependencies:
     "@babel/parser" "^7.14.0"
-    flow-parser "^0.121.0"
+    flow-parser "^0.185.0"
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
