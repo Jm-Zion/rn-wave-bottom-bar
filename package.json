@@ -70,7 +70,7 @@
     "@commitlint/cli": "17.2.0",
     "@commitlint/config-conventional": "17.2.0",
     "@react-native-community/bob": "0.17.1",
-    "@react-native-community/eslint-config": "3.1.0",
+    "@react-native-community/eslint-config": "3.2.0",
     "@react-navigation/bottom-tabs": "6.4.0",
     "@react-navigation/native": "6.0.13",
     "@semantic-release/changelog": "6.0.1",
