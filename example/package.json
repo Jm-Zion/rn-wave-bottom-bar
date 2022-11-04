@@ -24,7 +24,7 @@
     "rn-wave-bottom-bar": "link:../"
   },
   "devDependencies": {
-    "@babel/core": "7.19.6",
+    "@babel/core": "7.20.2",
     "@babel/runtime": "7.20.1",
     "@react-native-community/eslint-config": "3.2.0",
     "@types/jest": "29.2.2",

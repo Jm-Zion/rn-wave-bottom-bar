@@ -65,7 +65,7 @@
   },
   "devDependencies": {
     "react-native-safe-area-context": "4.4.1",
-    "@babel/core": "7.19.6",
+    "@babel/core": "7.20.2",
     "@babel/runtime": "7.20.1",
     "@commitlint/cli": "17.2.0",
     "@commitlint/config-conventional": "17.2.0",
