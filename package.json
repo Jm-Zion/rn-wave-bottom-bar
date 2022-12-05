@@ -77,7 +77,7 @@
     "@semantic-release/git": "10.0.1",
     "@semantic-release/npm": "9.0.1",
     "@semantic-release/release-notes-generator": "10.0.3",
-    "@types/jest": "29.2.3",
+    "@types/jest": "29.2.4",
     "@types/react": "18.0.26",
     "@types/react-native": "0.70.7",
     "@types/react-native-vector-icons": "6.4.12",
