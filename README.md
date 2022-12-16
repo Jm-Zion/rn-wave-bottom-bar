@@ -6,7 +6,7 @@ Custom animated bottom-tab-bar for react-native.
 
 ## 💾 Installation
 
-Make sure you installed `react-native-safe-area-context` before installing the library : https
+Make sure you installed `react-native-safe-area-context` before installing the library
 
 ```
 yarn add rn-wave-bottom-bar
@@ -21,11 +21,7 @@ npm install rn-wave-bottom-bar --save
 ## 📋 Requirements
 
 - React-Navigation v6 installed : https://reactnavigation.org/
-
-## :sparkles: What's new in 2.0.1
-
-- New tab bar button shape : square
-- Now support tabBarLabel
+- React-native reanimated 2.+ installed : https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/installation
 
 ## ⚒️ Usage
 
@@ -178,6 +174,7 @@ Initial Design : https://uimovement.com/design/tab-bar-3/
 
 ## More
 
-Checkout our other libraries :
+📌 Checkout our other libraries :
 
 - rn-gauge : https://github.com/Winzana/rn-gauge
+- rn-exclude-system-gesture-area: https://github.com/Winzana/rn-exclude-system-gesture-area

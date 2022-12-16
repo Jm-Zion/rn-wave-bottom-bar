@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Animated,
-  Dimensions,
-  StyleProp,
-  StyleSheet,
-  View,
-} from 'react-native';
+import { Dimensions, StyleProp, StyleSheet, View } from 'react-native';
+import RNReanimated, {
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
+  WithSpringConfig,
+} from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Path, Svg } from 'react-native-svg';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
@@ -15,7 +15,7 @@ import FabBarButton, { BarButton } from './tab.bar.button';
 import { getTabShape } from './tab.shape';
 import { getSquareTabShape } from './tab.square.shape';
 
-const AnimatedSvg = Animated.createAnimatedComponent(Svg);
+const ReanimatedSvg = RNReanimated.createAnimatedComponent(Svg);
 
 const tabWidth = 110;
 
@@ -30,7 +30,7 @@ type CustomProps = {
   /**
    * Custom spring animation config
    */
-  springConfig?: Omit<Animated.SpringAnimationConfig, 'toValue'>;
+  springConfig?: Omit<WithSpringConfig, 'toValue'>;
   /**
    * Custom style for bar
    */
@@ -69,7 +69,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
 
   const tabsWidthValue = React.useMemo(
     () => width / state.routes.length,
-    [width, state.routes],
+    [width, state.routes]
   );
   const tabsRealWidth = width / state.routes.length;
 
@@ -77,9 +77,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
     ? -width + tabsWidthValue * (state.routes.length - 1 - state.index)
     : -width + tabsWidthValue * state.index;
 
-  const [animatedValueLength, setAnimatedValueLength] = useState(
-    new Animated.Value(initialPosition),
-  );
+  const animatedValueLength = useSharedValue(initialPosition);
 
   const offset =
     tabsRealWidth < tabWidth
@@ -87,15 +85,19 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
       : (tabsRealWidth - tabWidth) * -1;
 
   useEffect(() => {
-    setAnimatedValueLength(new Animated.Value(initialPosition));
+    animatedValueLength.value = initialPosition;
   }, [isRtl]);
 
+  const animatedStyles = useAnimatedStyle(() => {
+    return {
+      transform: [{ translateX: animatedValueLength.value }],
+    };
+  });
   useEffect(() => {
-    Animated.spring(animatedValueLength, {
-      toValue: initialPosition - offset / 2,
-      ...(springConfig || defaultSpringConfig),
-      useNativeDriver: true,
-    }).start();
+    animatedValueLength.value = withSpring(
+      initialPosition - offset / 2,
+      springConfig || defaultSpringConfig
+    );
   }, [
     width,
     height,
@@ -107,14 +109,18 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
     initialPosition,
   ]);
 
-  const [animationValueThreshold] = useState(new Animated.Value(0));
+  const animationValueThreshold = useSharedValue(0);
 
   useEffect(() => {
-    Animated.spring(animationValueThreshold, {
+    animationValueThreshold.value = withSpring(
+      state.index,
+      springConfig || defaultSpringConfig
+    );
+    /*Animated.spring(animationValueThreshold, {
       toValue: state.index,
       ...(springConfig || defaultSpringConfig),
-      useNativeDriver: true,
-    }).start();
+      useNativeDriver: false,
+    }).start();*/
   }, [animationValueThreshold, state.index, springConfig]);
 
   return (
@@ -198,15 +204,16 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
         })}
       </View>
       <View style={[StyleSheet.absoluteFill, style.barShapeWrapper]}>
-        <AnimatedSvg
+        <ReanimatedSvg
           width={width * 2.5}
           height={height + bottom}
-          style={{
-            width: '100%',
-            backgroundColor: 'transparent',
-            color: 'transparent',
-            transform: [{ translateX: animatedValueLength }],
-          }}
+          style={[
+            {
+              width: '100%',
+              backgroundColor: 'transparent',
+            },
+            animatedStyles,
+          ]}
         >
           <Path
             d={d}
@@ -215,7 +222,7 @@ export const FabTabBar: React.FC<BottomTabBarProps & CustomProps> = ({
                 .tabBarActiveBackgroundColor || '#FF5252'
             }
           />
-        </AnimatedSvg>
+        </ReanimatedSvg>
       </View>
       {state.routes.map((route: Route<any>, index: number) => {
         const { options } = descriptors[route.key];
