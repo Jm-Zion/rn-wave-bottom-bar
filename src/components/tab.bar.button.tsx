@@ -1,18 +1,17 @@
-import React, { memo, useEffect, useState } from 'react';
-import {
-  Animated,
-  StyleProp,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import React, { memo, useEffect } from 'react';
+import { StyleProp, TouchableOpacity, View } from 'react-native';
+
+import RNReanimated, {
+  interpolate,
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
+  WithSpringConfig,
+} from 'react-native-reanimated';
 
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 
 import { style } from '../styles/tab.bar.button.styles';
-
-const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
-const AnimatedText = Animated.createAnimatedComponent(Text);
 
 interface Props {
   mode: 'default' | 'square';
@@ -23,11 +22,11 @@ interface Props {
   options: BottomTabNavigationOptions;
   inactiveTintColor?: string;
   activeTintColor?: string;
-  springConfig?: Animated.SpringAnimationConfig;
+  springConfig?: WithSpringConfig;
   focusedButtonStyle?: StyleProp<any>;
 }
 
-export const defaultSpringConfig = {
+export const defaultSpringConfig: WithSpringConfig = {
   damping: 30,
   mass: 0.7,
   stiffness: 250,
@@ -43,74 +42,80 @@ export const BarButton: React.FC<Props> = memo(
     focusedButtonStyle,
     springConfig,
   }) => {
-    const [animationValueThreshold] = useState(new Animated.Value(0));
+    const animationValueThreshold = useSharedValue(0);
 
     useEffect(() => {
-      Animated.spring(animationValueThreshold, {
-        toValue: isFocused ? 0 : 1,
-        ...(springConfig || defaultSpringConfig),
-        useNativeDriver: true,
-      }).start();
+      if (isFocused) {
+        animationValueThreshold.value = withSpring(
+          0,
+          springConfig || defaultSpringConfig
+        );
+      } else {
+        animationValueThreshold.value = withSpring(
+          1,
+          springConfig || defaultSpringConfig
+        );
+      }
     }, [isFocused, animationValueThreshold, springConfig]);
+
+    const animatedStyles = useAnimatedStyle(() => {
+      return {
+        opacity: animationValueThreshold.value,
+        transform: [
+          {
+            scale: animationValueThreshold.value,
+          },
+        ],
+      };
+    });
+
+    const textAnimatedStyle = useAnimatedStyle(() => {
+      return {
+        opacity: interpolate(animationValueThreshold.value, [0.5, 1], [0, 1]),
+      };
+    });
 
     return (
       <View style={style.wrapper}>
-        <AnimatedTouchable
-          accessibilityRole="button"
-          accessibilityLabel={options.tabBarAccessibilityLabel}
-          testID={options.tabBarTestID}
-          onPress={onPress}
-          style={[
-            style.unfocusedButton,
-            { opacity: animationValueThreshold },
-            {
-              transform: [
-                {
-                  scale: animationValueThreshold.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [0, 1],
-                  }),
-                },
-              ],
-            },
-            isFocused ? focusedButtonStyle : {},
-          ]}
-          onLongPress={onLongPress}
-        >
-          <View style={style.tabBarLabelWrapper}>
-            {options.tabBarIcon && !isFocused ? (
-              options.tabBarIcon({
-                focused: isFocused,
-                color: inactiveTintColor || 'white',
-                size: 28,
-              })
-            ) : (
-              <View />
-            )}
-            {options.tabBarLabel && (
-              <AnimatedText
-                style={[
-                  {
-                    marginTop: 2,
-                    color: inactiveTintColor,
-                  },
-                  {
-                    opacity: animationValueThreshold.interpolate({
-                      inputRange: [0.5, 1],
-                      outputRange: [0, 1],
-                    }),
-                  },
-                  options.tabBarLabelStyle,
-                ]}
-              >
-                {options.tabBarLabel}
-              </AnimatedText>
-            )}
-          </View>
-        </AnimatedTouchable>
+        <RNReanimated.View style={animatedStyles}>
+          <TouchableOpacity
+            accessibilityRole="button"
+            accessibilityLabel={options.tabBarAccessibilityLabel}
+            testID={options.tabBarTestID}
+            onPress={onPress}
+            style={[style.unfocusedButton, isFocused ? focusedButtonStyle : {}]}
+            onLongPress={onLongPress}
+          >
+            <View style={style.tabBarLabelWrapper}>
+              {options.tabBarIcon && !isFocused ? (
+                options.tabBarIcon({
+                  focused: isFocused,
+                  color: inactiveTintColor || 'white',
+                  size: 28,
+                })
+              ) : (
+                <View />
+              )}
+              {options.tabBarLabel && (
+                <RNReanimated.Text
+                  style={[
+                    {
+                      marginTop: 2,
+                      color: inactiveTintColor,
+                    },
+                    textAnimatedStyle,
+                    options.tabBarLabelStyle,
+                  ]}
+                >
+                  {options.tabBarLabel}
+                </RNReanimated.Text>
+              )}
+            </View>
+          </TouchableOpacity>
+        </RNReanimated.View>
       </View>
     );
-  },
+  }
 );
 
 export const TabBarButton: React.FC<Props> = memo(
@@ -124,53 +129,72 @@ export const TabBarButton: React.FC<Props> = memo(
     focusedButtonStyle,
     mode,
   }) => {
-    const [animationValueThreshold] = useState(new Animated.Value(0));
+    const animationValueThreshold = useSharedValue(0);
 
     useEffect(() => {
-      Animated.spring(animationValueThreshold, {
-        toValue: isFocused ? 0 : 1,
-        ...(springConfig || defaultSpringConfig),
-        useNativeDriver: true,
-      }).start();
+      if (isFocused) {
+        animationValueThreshold.value = withSpring(
+          0,
+          springConfig || defaultSpringConfig
+        );
+      } else {
+        animationValueThreshold.value = withSpring(
+          1,
+          springConfig || defaultSpringConfig
+        );
+      }
     }, [isFocused, animationValueThreshold, springConfig]);
+
+    const animatedStyles = useAnimatedStyle(() => {
+      return {
+        transform: [
+          {
+            translateY: interpolate(
+              animationValueThreshold.value,
+              [0, 1],
+              [-18, 100]
+            ),
+          },
+        ],
+      };
+    });
 
     return (
       <View style={style.wrapper}>
-        <AnimatedTouchable
-          accessibilityRole="button"
-          accessibilityComponentType="Button"
-          accessibilityLabel={options.tabBarAccessibilityLabel}
-          testID={options.tabBarTestID}
-          onPress={onPress}
+        <RNReanimated.View
           style={[
-            {
-              ...style.focusedButton,
-              ...(mode === 'square' ? style.squareFocusedButton : {}),
-              backgroundColor: activeTintColor || 'white',
-              transform: [
-                {
-                  translateY: animationValueThreshold.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [-18, 100],
-                  }),
-                },
-              ],
-            },
-            isFocused ? focusedButtonStyle : {},
+            animatedStyles,
+            { backgroundColor: 'green' },
+            style.focusedButton,
           ]}
-          onLongPress={onLongPress}
         >
-          {options.tabBarIcon
-            ? options.tabBarIcon({
-                focused: isFocused,
-                color: 'white',
-                size: 28,
-              })
-            : null}
-        </AnimatedTouchable>
+          <TouchableOpacity
+            accessibilityRole="button"
+            accessibilityLabel={options.tabBarAccessibilityLabel}
+            testID={options.tabBarTestID}
+            onPress={onPress}
+            style={[
+              {
+                ...style.focusedButton,
+                ...(mode === 'square' ? style.squareFocusedButton : {}),
+                backgroundColor: activeTintColor || 'white',
+              },
+              isFocused ? focusedButtonStyle : {},
+            ]}
+            onLongPress={onLongPress}
+          >
+            {options.tabBarIcon
+              ? options.tabBarIcon({
+                  focused: isFocused,
+                  color: 'white',
+                  size: 28,
+                })
+              : null}
+          </TouchableOpacity>
+        </RNReanimated.View>
       </View>
     );
-  },
+  }
 );
 
 export default TabBarButton;
