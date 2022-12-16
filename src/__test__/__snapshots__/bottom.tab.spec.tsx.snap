@@ -3,7 +3,7 @@
 exports[`FabTabBar Should render 1`] = `
 <Navigator
   screenOptions={
-    Object {
+    {
       "tabBarActiveTintColor": "purple",
       "tabBarInactiveTintColor": "white",
     }
@@ -14,7 +14,7 @@ exports[`FabTabBar Should render 1`] = `
     component={[Function]}
     name="Home"
     options={
-      Object {
+      {
         "tabBarIcon": [Function],
         "tabBarLabel": "Home",
       }
@@ -24,7 +24,7 @@ exports[`FabTabBar Should render 1`] = `
     component={[Function]}
     name="Home"
     options={
-      Object {
+      {
         "tabBarIcon": [Function],
         "tabBarLabel": "Settings",
       }
@@ -36,7 +36,7 @@ exports[`FabTabBar Should render 1`] = `
 exports[`FabTabBar Should render 2`] = `
 <Navigator
   screenOptions={
-    Object {
+    {
       "tabBarActiveTintColor": "purple",
       "tabBarInactiveTintColor": "white",
     }
@@ -47,7 +47,7 @@ exports[`FabTabBar Should render 2`] = `
     component={[Function]}
     name="Home"
     options={
-      Object {
+      {
         "tabBarIcon": [Function],
         "tabBarLabel": "Home",
       }
@@ -57,7 +57,7 @@ exports[`FabTabBar Should render 2`] = `
     component={[Function]}
     name="Home"
     options={
-      Object {
+      {
         "tabBarIcon": [Function],
         "tabBarLabel": "Settings",
       }

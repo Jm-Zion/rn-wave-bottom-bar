@@ -3,7 +3,7 @@
 exports[`TabBarButton Should render well it is not focused 1`] = `
 <View
   style={
-    Object {
+    {
       "alignItems": "center",
       "elevation": 12,
       "flex": 1,
@@ -13,39 +13,141 @@ exports[`TabBarButton Should render well it is not focused 1`] = `
   }
 >
   <View
-    accessibilityRole="button"
-    accessible={true}
-    focusable={true}
-    forwardedRef={[Function]}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+    animatedStyle={
+      {
+        "value": {
+          "opacity": 0,
+          "transform": [
+            {
+              "scale": 0,
+            },
+          ],
+        },
+      }
+    }
+    collapsable={false}
     style={
-      Object {
-        "alignItems": "center",
-        "elevation": 12,
-        "flex": 1,
-        "justifyContent": "center",
+      {
         "opacity": 0,
-        "transform": Array [
-          Object {
-            "scale": 1,
+        "transform": [
+          {
+            "scale": 0,
           },
         ],
-        "width": "100%",
-        "zIndex": 12,
       }
     }
   >
     <View
+      accessibilityRole="button"
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Object {
+        {
           "alignItems": "center",
+          "elevation": 12,
+          "flex": 1,
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": "100%",
           "zIndex": 12,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "zIndex": 12,
+          }
+        }
+      >
+        <View
+          color="white"
+          focused={false}
+          size={28}
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`TabBarButton Should render well it is not focused 2`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "elevation": 12,
+      "flex": 1,
+      "justifyContent": "center",
+      "zIndex": 1,
+    }
+  }
+>
+  <View
+    animatedStyle={
+      {
+        "value": {
+          "transform": [
+            {
+              "translateY": -18,
+            },
+          ],
+        },
+      }
+    }
+    collapsable={false}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "green",
+        "borderRadius": 32,
+        "elevation": 10,
+        "height": 60,
+        "justifyContent": "center",
+        "position": "absolute",
+        "transform": [
+          {
+            "translateY": -18,
+          },
+        ],
+        "width": 60,
+        "zIndex": -1,
+      }
+    }
+  >
+    <View
+      accessibilityRole="button"
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderRadius": 32,
+          "elevation": 10,
+          "height": 60,
+          "justifyContent": "center",
+          "opacity": 1,
+          "position": "absolute",
+          "width": 60,
+          "zIndex": -1,
         }
       }
     >
@@ -59,63 +161,10 @@ exports[`TabBarButton Should render well it is not focused 1`] = `
 </View>
 `;
 
-exports[`TabBarButton Should render well it is not focused 2`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "elevation": 12,
-      "flex": 1,
-      "justifyContent": "center",
-      "zIndex": 1,
-    }
-  }
->
-  <View
-    accessibilityRole="button"
-    accessible={true}
-    focusable={true}
-    forwardedRef={[Function]}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "white",
-        "borderRadius": 32,
-        "elevation": 10,
-        "height": 60,
-        "justifyContent": "center",
-        "opacity": 1,
-        "position": "absolute",
-        "transform": Array [
-          Object {
-            "translateY": 100,
-          },
-        ],
-        "width": 60,
-        "zIndex": -1,
-      }
-    }
-  >
-    <View
-      color="white"
-      focused={false}
-      size={28}
-    />
-  </View>
-</View>
-`;
-
 exports[`TabBarButton Should render well it is not focused 3`] = `
 <View
   style={
-    Object {
+    {
       "alignItems": "center",
       "elevation": 12,
       "flex": 1,
@@ -125,137 +174,29 @@ exports[`TabBarButton Should render well it is not focused 3`] = `
   }
 >
   <View
-    accessibilityRole="button"
-    accessible={true}
-    focusable={true}
-    forwardedRef={[Function]}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "white",
-        "borderRadius": 16,
-        "elevation": 10,
-        "height": 60,
-        "justifyContent": "center",
-        "opacity": 1,
-        "position": "absolute",
-        "transform": Array [
-          Object {
-            "translateY": 100,
-          },
-        ],
-        "width": 60,
-        "zIndex": -1,
+    animatedStyle={
+      {
+        "value": {
+          "transform": [
+            {
+              "translateY": -18,
+            },
+          ],
+        },
       }
     }
-  >
-    <View
-      color="white"
-      focused={false}
-      size={28}
-    />
-  </View>
-</View>
-`;
-
-exports[`TabBarButton Should render well when it's Focus 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "elevation": 12,
-      "flex": 1,
-      "justifyContent": "center",
-      "zIndex": 1,
-    }
-  }
->
-  <View
-    accessibilityRole="button"
-    accessible={true}
-    focusable={true}
-    forwardedRef={[Function]}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+    collapsable={false}
     style={
-      Object {
+      {
         "alignItems": "center",
-        "elevation": 12,
-        "flex": 1,
-        "justifyContent": "center",
-        "opacity": 0,
-        "transform": Array [
-          Object {
-            "scale": 0,
-          },
-        ],
-        "width": "100%",
-        "zIndex": 12,
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "zIndex": 12,
-        }
-      }
-    >
-      <View />
-    </View>
-  </View>
-</View>
-`;
-
-exports[`TabBarButton Should render well when it's Focus 2`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "elevation": 12,
-      "flex": 1,
-      "justifyContent": "center",
-      "zIndex": 1,
-    }
-  }
->
-  <View
-    accessibilityRole="button"
-    accessible={true}
-    focusable={true}
-    forwardedRef={[Function]}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "white",
+        "backgroundColor": "green",
         "borderRadius": 32,
         "elevation": 10,
         "height": 60,
         "justifyContent": "center",
-        "opacity": 1,
         "position": "absolute",
-        "transform": Array [
-          Object {
+        "transform": [
+          {
             "translateY": -18,
           },
         ],
@@ -265,10 +206,195 @@ exports[`TabBarButton Should render well when it's Focus 2`] = `
     }
   >
     <View
-      color="white"
-      focused={true}
-      size={28}
-    />
+      accessibilityRole="button"
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderRadius": 16,
+          "elevation": 10,
+          "height": 60,
+          "justifyContent": "center",
+          "opacity": 1,
+          "position": "absolute",
+          "width": 60,
+          "zIndex": -1,
+        }
+      }
+    >
+      <View
+        color="white"
+        focused={false}
+        size={28}
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`TabBarButton Should render well when it's Focus 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "elevation": 12,
+      "flex": 1,
+      "justifyContent": "center",
+      "zIndex": 1,
+    }
+  }
+>
+  <View
+    animatedStyle={
+      {
+        "value": {
+          "opacity": 0,
+          "transform": [
+            {
+              "scale": 0,
+            },
+          ],
+        },
+      }
+    }
+    collapsable={false}
+    style={
+      {
+        "opacity": 0,
+        "transform": [
+          {
+            "scale": 0,
+          },
+        ],
+      }
+    }
+  >
+    <View
+      accessibilityRole="button"
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "elevation": 12,
+          "flex": 1,
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": "100%",
+          "zIndex": 12,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "zIndex": 12,
+          }
+        }
+      >
+        <View />
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`TabBarButton Should render well when it's Focus 2`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "elevation": 12,
+      "flex": 1,
+      "justifyContent": "center",
+      "zIndex": 1,
+    }
+  }
+>
+  <View
+    animatedStyle={
+      {
+        "value": {
+          "transform": [
+            {
+              "translateY": -18,
+            },
+          ],
+        },
+      }
+    }
+    collapsable={false}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "green",
+        "borderRadius": 32,
+        "elevation": 10,
+        "height": 60,
+        "justifyContent": "center",
+        "position": "absolute",
+        "transform": [
+          {
+            "translateY": -18,
+          },
+        ],
+        "width": 60,
+        "zIndex": -1,
+      }
+    }
+  >
+    <View
+      accessibilityRole="button"
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderRadius": 32,
+          "elevation": 10,
+          "height": 60,
+          "justifyContent": "center",
+          "opacity": 1,
+          "position": "absolute",
+          "width": 60,
+          "zIndex": -1,
+        }
+      }
+    >
+      <View
+        color="white"
+        focused={true}
+        size={28}
+      />
+    </View>
   </View>
 </View>
 `;

@@ -22,12 +22,8 @@ module.exports = {
   },
   testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node', '.js.map'],
-  transform: {
-    '^.+\\.(js|jsx)$': '<rootDir>/node_modules/babel-jest',
-    '^.+\\.tsx?$': 'ts-jest',
-  },
   transformIgnorePatterns: [
-    'node_modules/(?!(react-native|@react-native/*|react-native-screens|@react-navigation/bottom-tabs|@react-native-community|@react-navigation|react-native-paper|react-native-vector-icons|react-native-paper|react-native-reanimated|react-native-safe-area-view|react-native-gesture-handler)/)',
+    'node_modules/(?!(react-native|@react-native/*|d3-shape|d3-path|react-native-screens|@react-navigation/bottom-tabs|@react-native-community|@react-navigation|react-native-paper|react-native-vector-icons|react-native-paper|react-native-reanimated|react-native-safe-area-view|react-native-gesture-handler)/)',
   ],
   verbose: true,
   bail: true,
