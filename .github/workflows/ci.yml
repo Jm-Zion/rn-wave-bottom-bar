@@ -20,23 +20,23 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: borales/actions-yarn@v3.0.0
+      - uses: borales/actions-yarn@v4.2.0
         with:
           cmd: install
         name: yarn install
-      - uses: borales/actions-yarn@v3.0.0
+      - uses: borales/actions-yarn@v4.2.0
         with:
           cmd: lint
         name: yarn lint
-      - uses: borales/actions-yarn@v3.0.0
+      - uses: borales/actions-yarn@v4.2.0
         with:
           cmd: typescript:typescheck
         name: yarn typescript:typescheck
-      - uses: borales/actions-yarn@v3.0.0
+      - uses: borales/actions-yarn@v4.2.0
         with:
           cmd: prepare
         name: yarn prepare
-      - uses: borales/actions-yarn@v3.0.0
+      - uses: borales/actions-yarn@v4.2.0
         with:
           cmd: test
         name: yarn test
@@ -47,7 +47,7 @@ jobs:
     if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v3
-      - uses: borales/actions-yarn@v3.0.0
+      - uses: borales/actions-yarn@v4.2.0
         with:
           cmd: install
         name: yarn install
