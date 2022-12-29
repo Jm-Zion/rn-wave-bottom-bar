@@ -6853,10 +6853,10 @@ react-native-gradle-plugin@^0.70.3:
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.70.3.tgz#cbcf0619cbfbddaa9128701aa2d7b4145f9c4fc8"
   integrity sha512-oOanj84fJEXUg9FoEAQomA8ISG+DVIrTZ3qF7m69VQUJyOGYyDZmPqKcjvRku4KXlEH6hWO9i4ACLzNBh8gC0A==
 
-react-native-paper@5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-5.1.1.tgz#0d2bcfc232e281bc0de84cd51dd72e735f3c1fff"
-  integrity sha512-qDpQlGMGLv4TBYdfk3RRk3a/vhtEC8u0FiVfmpm5VwgIcauLdnCkiyzaexRlulaIet1Q7AgBRsjmcuMRvi+Stg==
+react-native-paper@5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-5.1.2.tgz#695e273871b17b908299029adadb72492271e586"
+  integrity sha512-muf70CPtji6gTukV+9ecvzOYFOflK2hi4t4GLt9y4Ynhf/YQCvXsefPTp45n7RS6bz9+ueG4jtuGg64oOY8dxA==
   dependencies:
     "@callstack/react-theme-provider" "^3.0.8"
     color "^3.1.2"
