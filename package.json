@@ -79,7 +79,7 @@
     "@types/jest": "29.2.5",
     "@types/react-native-vector-icons": "6.4.12",
     "@types/react-test-renderer": "18.0.0",
-    "@typescript-eslint/eslint-plugin": "5.48.0",
+    "@typescript-eslint/eslint-plugin": "5.48.1",
     "add": "2.0.6",
     "babel-jest": "^29.3.1",
     "eslint": "8.31.0",
