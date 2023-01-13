@@ -1,3 +1,10 @@
+## [2.2.6](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.2.5...v2.2.6) (2023-01-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.android.tools.build:gradle to v7.4.0 ([a50b744](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/a50b74469c301819b4e11b4c5c1d5d029c6fbcfe))
+
 ## [2.2.5](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.2.4...v2.2.5) (2023-01-10)
 
 
