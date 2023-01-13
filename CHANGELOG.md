@@ -1,3 +1,10 @@
+## [2.2.7](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.2.6...v2.2.7) (2023-01-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-native-gesture-handler to v2.9.0 ([f40fffa](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/f40fffa471f0906f188700cca5fb5e8185acc96b))
+
 ## [2.2.6](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.2.5...v2.2.6) (2023-01-13)
 
 
