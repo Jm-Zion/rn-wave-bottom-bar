@@ -1,3 +1,10 @@
+## [2.2.9](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.2.8...v2.2.9) (2023-01-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-native-screens to v3.19.0 ([0702d9e](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/0702d9e82bc49dd042e83819b7e5ab93d4c2850b))
+
 ## [2.2.8](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.2.7...v2.2.8) (2023-01-17)
 
 
