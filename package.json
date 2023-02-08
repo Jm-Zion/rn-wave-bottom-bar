@@ -90,7 +90,7 @@
     "jest-environment-jsdom": "^29.3.1",
     "lint-staged": "13.1.1",
     "metro-react-native-babel-preset": "0.75.0",
-    "prettier": "2.8.3",
+    "prettier": "2.8.4",
     "react": "18.2.0",
     "react-native": "0.70.6",
     "react-native-reanimated": "^2.13.0",
