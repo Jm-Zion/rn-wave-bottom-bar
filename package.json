@@ -64,8 +64,8 @@
     "d3-shape": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.20.12",
-    "@babel/runtime": "7.20.13",
+    "@babel/core": "7.21.0",
+    "@babel/runtime": "7.21.0",
     "@commitlint/cli": "17.4.4",
     "@commitlint/config-conventional": "17.4.4",
     "@react-native-community/bob": "0.17.1",
