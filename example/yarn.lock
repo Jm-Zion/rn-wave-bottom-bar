@@ -950,19 +950,19 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.14.5"
 
+"@babel/plugin-syntax-flow@^7.12.1", "@babel/plugin-syntax-flow@^7.18.0":
+  version "7.18.6"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-flow/-/plugin-syntax-flow-7.18.6.tgz#774d825256f2379d06139be0c723c4dd444f3ca1"
+  integrity sha512-LUbR+KNTBWCUAqRG9ex5Gnzu2IOkt8jRJbHHXFT9q+L9zm7M/QQbEqXyw1n1pohYvOyWC8CjeyjrSaIwiYjK7A==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.18.6"
+
 "@babel/plugin-syntax-flow@^7.17.12":
   version "7.17.12"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-flow/-/plugin-syntax-flow-7.17.12.tgz#23d852902acd19f42923fca9d0f196984d124e73"
   integrity sha512-B8QIgBvkIG6G2jgsOHQUist7Sm0EBLDCx8sen072IwqNuzMegZNXrYnSv77cYzA8mLDZAfQYqsLIhimiP1s2HQ==
   dependencies:
     "@babel/helper-plugin-utils" "^7.17.12"
-
-"@babel/plugin-syntax-flow@^7.18.0":
-  version "7.18.6"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-flow/-/plugin-syntax-flow-7.18.6.tgz#774d825256f2379d06139be0c723c4dd444f3ca1"
-  integrity sha512-LUbR+KNTBWCUAqRG9ex5Gnzu2IOkt8jRJbHHXFT9q+L9zm7M/QQbEqXyw1n1pohYvOyWC8CjeyjrSaIwiYjK7A==
-  dependencies:
-    "@babel/helper-plugin-utils" "^7.18.6"
 
 "@babel/plugin-syntax-import-meta@^7.8.3":
   version "7.10.4"
@@ -2928,6 +2928,13 @@ babel-plugin-syntax-trailing-function-commas@^7.0.0-beta.0:
   version "7.0.0-beta.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-trailing-function-commas/-/babel-plugin-syntax-trailing-function-commas-7.0.0-beta.0.tgz#aa213c1435e2bffeb6fca842287ef534ad05d5cf"
   integrity sha512-Xj9XuRuz3nTSbaTXWv3itLOcxyF4oPD8douBBmj7U9BBC6nEBYfyOJYQMf/8PJAFotC62UY5dFfIGEPr7WswzQ==
+
+babel-plugin-transform-flow-enums@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-flow-enums/-/babel-plugin-transform-flow-enums-0.0.2.tgz#d1d0cc9bdc799c850ca110d0ddc9f21b9ec3ef25"
+  integrity sha512-g4aaCrDDOsWjbm0PUUeVnkcVd6AKJsVc/MbnPhEotEpkeJQP6b8nzewohQi7+QS8UyPehOhGWn0nOwjvWpmMvQ==
+  dependencies:
+    "@babel/plugin-syntax-flow" "^7.12.1"
 
 babel-preset-current-node-syntax@^1.0.0:
   version "1.0.1"
@@ -6017,10 +6024,10 @@ metro-react-native-babel-preset@0.72.3:
     "@babel/template" "^7.0.0"
     react-refresh "^0.4.0"
 
-metro-react-native-babel-preset@0.75.0:
-  version "0.75.0"
-  resolved "https://registry.yarnpkg.com/metro-react-native-babel-preset/-/metro-react-native-babel-preset-0.75.0.tgz#a75bafb25f32232f6e1925f76942e1776a719bd5"
-  integrity sha512-QJOoSdkedB+TrKmHiSxMuEkyynmtNzsjRNW9uugaW3/zCMAQW438tvy7k44meLMDohfSAtcr6fclZVxeYq1meQ==
+metro-react-native-babel-preset@0.75.1:
+  version "0.75.1"
+  resolved "https://registry.yarnpkg.com/metro-react-native-babel-preset/-/metro-react-native-babel-preset-0.75.1.tgz#370bb3bba3ca83b3be1d8b0ab628271c864491cd"
+  integrity sha512-a4Se/koIVsH+wmfWsSOiRpFLBSICJcbd6o1wv37QRoFSnH7mYXDOfYxNBZYX46PwN1QwmgR49Iwsef79JOaJMg==
   dependencies:
     "@babel/core" "^7.20.0"
     "@babel/plugin-proposal-async-generator-functions" "^7.0.0"
@@ -6059,6 +6066,7 @@ metro-react-native-babel-preset@0.75.0:
     "@babel/plugin-transform-typescript" "^7.5.0"
     "@babel/plugin-transform-unicode-regex" "^7.0.0"
     "@babel/template" "^7.0.0"
+    babel-plugin-transform-flow-enums "^0.0.2"
     react-refresh "^0.4.0"
 
 metro-react-native-babel-transformer@0.72.3:
