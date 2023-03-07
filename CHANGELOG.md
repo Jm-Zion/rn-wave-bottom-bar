@@ -1,3 +1,10 @@
+## [2.2.20](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.2.19...v2.2.20) (2023-03-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-native-paper to v5.3.1 ([44a8c41](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/44a8c41906caca6a78a4c808267cdbd89485973f))
+
 ## [2.2.19](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.2.18...v2.2.19) (2023-03-02)
 
 
