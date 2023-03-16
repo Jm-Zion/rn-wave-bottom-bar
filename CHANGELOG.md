@@ -1,3 +1,10 @@
+## [2.2.24](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.2.23...v2.2.24) (2023-03-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency d3-shape to v3.2.0 ([aee84d5](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/aee84d54b70d334b8fb151484fc674e799d9b983))
+
 ## [2.2.23](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.2.22...v2.2.23) (2023-03-14)
 
 
