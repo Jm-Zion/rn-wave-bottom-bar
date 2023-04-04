@@ -1,3 +1,10 @@
+## [2.2.32](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.2.31...v2.2.32) (2023-04-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.facebook.flipper:flipper to v0.188.0 ([7fc4c87](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/7fc4c87917f00dcd771f6e5f443330d0fbbc692e))
+
 ## [2.2.31](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.2.30...v2.2.31) (2023-03-28)
 
 
