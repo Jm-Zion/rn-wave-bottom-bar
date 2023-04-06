@@ -1,3 +1,10 @@
+## [2.2.34](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.2.33...v2.2.34) (2023-04-06)
+
+
+### Bug Fixes
+
+* **deps:** update flipper_version to v0.189.0 ([3f5f932](https://github.com/Jm-Zion/rn-wave-bottom-bar/commit/3f5f932d40efc93b2811cdc16f4a2626a00e924f))
+
 ## [2.2.33](https://github.com/Jm-Zion/rn-wave-bottom-bar/compare/v2.2.32...v2.2.33) (2023-04-05)
 
 
