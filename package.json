@@ -66,8 +66,8 @@
   "devDependencies": {
     "@babel/core": "7.21.4",
     "@babel/runtime": "7.21.0",
-    "@commitlint/cli": "17.6.0",
-    "@commitlint/config-conventional": "17.6.0",
+    "@commitlint/cli": "17.6.1",
+    "@commitlint/config-conventional": "17.6.1",
     "@react-native-community/bob": "0.17.1",
     "@react-native-community/eslint-config": "3.2.0",
     "@react-navigation/bottom-tabs": "6.5.7",
