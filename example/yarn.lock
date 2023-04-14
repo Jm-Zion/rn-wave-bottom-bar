@@ -6028,10 +6028,10 @@ metro-react-native-babel-preset@0.72.3:
     "@babel/template" "^7.0.0"
     react-refresh "^0.4.0"
 
-metro-react-native-babel-preset@0.76.1:
-  version "0.76.1"
-  resolved "https://registry.yarnpkg.com/metro-react-native-babel-preset/-/metro-react-native-babel-preset-0.76.1.tgz#c6cc85556091d2064fe9c9e339c227cdce773b1b"
-  integrity sha512-1336W8B84eew4J3bfTbL2I40S3M03v5Rus6nTjAsXMkJZWpeVFvJLRG3NO04kp+7CyFJCR1JBOJPzpLLv75fNQ==
+metro-react-native-babel-preset@0.76.2:
+  version "0.76.2"
+  resolved "https://registry.yarnpkg.com/metro-react-native-babel-preset/-/metro-react-native-babel-preset-0.76.2.tgz#dab4ca4b594bb47780adf5987c6b3b9cb41e767b"
+  integrity sha512-Kzi4JhEzwrPOuv3OHjDZvvlPTjInNoIV8QKBRyLTzx7TJuA5a2xReo0lz4sG4x9Bcv1XjKkKRmYUgS9V1I820w==
   dependencies:
     "@babel/core" "^7.20.0"
     "@babel/plugin-proposal-async-generator-functions" "^7.0.0"
